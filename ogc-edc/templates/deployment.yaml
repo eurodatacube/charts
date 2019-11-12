@@ -25,7 +25,7 @@ spec:
           image: eurodatacube/ogc-edc:0.10.0
           ports:
             - name: http
-              containerPort: 80
+              containerPort: 5000
               protocol: TCP
           env:
             - name: SH_CLIENT_ID

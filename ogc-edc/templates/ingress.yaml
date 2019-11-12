@@ -9,6 +9,7 @@ metadata:
     kubernetes.io/ingress.class: nginx
     kubernetes.io/tls-acme: 'true'
     nginx.ingress.kubernetes.io/proxy-read-timeout: '600'
+    nginx.ingress.kubernetes.io/enable-cors: 'true'
 spec:
   rules:
   - host: {{ $fullName }}.{{ .Release.Namespace }}.hub.eox.at
