@@ -1,4 +1,4 @@
-# Helm chart for OGC on top of Euro Data Cube (ogc-edc)
+# Helm chart for OGC layer on top of Euro Data Cube (ogc-edc)
 
 OGC layer including [EOxC browser](https://github.com/eoxc/eoxc) connected to Euro Data Cube's Sentinel-Hub service.
 
