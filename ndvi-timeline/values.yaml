@@ -1,0 +1,2 @@
+env:
+  INPUT_GEOMETRY: "POLYGON ((11 42, 11 42.1, 11.1 42.05, 11 42))"
