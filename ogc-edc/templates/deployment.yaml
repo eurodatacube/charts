@@ -22,7 +22,7 @@ spec:
     {{- end }}
       containers:
         - name: {{ .Chart.Name }}
-          image: eurodatacube/ogc-edc:0.9.17
+          image: eurodatacube/ogc-edc:0.10.0
           ports:
             - name: http
               containerPort: 80
