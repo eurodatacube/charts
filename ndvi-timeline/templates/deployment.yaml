@@ -22,7 +22,7 @@ spec:
     {{- end }}
       containers:
         - name: {{ .Chart.Name }}
-          image: eurodatacube/ndvi-timeline:0.4.0
+          image: eurodatacube/ndvi-timeline:0.4.1
           ports:
             - name: http
               containerPort: 80
