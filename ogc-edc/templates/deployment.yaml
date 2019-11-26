@@ -21,8 +21,8 @@ spec:
         {{- toYaml . | nindent 8 }}
     {{- end }}
       containers:
-        - name: {{ .Chart.Name }}
-          image: eurodatacube/ogc-edc:0.10.0
+        - name: {{ include "base.name" . }}
+          image: eurodatacube/ogc-edc:{{ .Chart.Version }}
           ports:
             - name: http
               containerPort: 5000
@@ -31,12 +31,12 @@ spec:
             - name: SH_CLIENT_ID
               valueFrom:
                 secretKeyRef:
-                  name: ogc-edc
+                  name: eurodatacube-{{ include "base.name" . }}
                   key: client_id
             - name: SH_CLIENT_SECRET
               valueFrom:
                 secretKeyRef:
-                  name: ogc-edc
+                  name: eurodatacube-{{ include "base.name" . }}
                   key: client_secret
           {{- range $name, $value := .Values.env }}
           {{- if not (empty $value) }}

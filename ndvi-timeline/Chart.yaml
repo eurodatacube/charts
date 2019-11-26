@@ -3,7 +3,9 @@ appVersion: "v1.0"
 description: ndvi-timeline
 name: ndvi-timeline
 version: 0.4.1
+keywords:
+  - Datacube
 maintainers:
-  - name: EuroDataCube
+  - name: Euro Data Cube
     url: www.eurodatacube.com
 icon: https://cockpit.hub.eox.at/storage/uploads/2019/09/12/5d7a0b3e162f4EDC_logo_square_blue.png
