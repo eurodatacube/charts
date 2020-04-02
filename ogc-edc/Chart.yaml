@@ -9,6 +9,8 @@ keywords:
 - tag:Open Standard
 - tag:View Service
 - tag:Download Service
+sources:
+- eurodatacube/ogc-edc
 
 maintainers:
   - name: Euro Data Cube Consortium
