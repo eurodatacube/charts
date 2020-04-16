@@ -1,0 +1,14 @@
+apiVersion: v1
+appVersion: v1.0
+description: Test EO Master 3000
+icon: https://raw.githubusercontent.com/eurodatacube/charts/master/789d5aa4-1786-4528-8199-8fb4c5dff700/index.png?sanitize=true
+keywords:
+- license:MIT
+- requirement:eurodatacube-geodb
+- requirement:eurodatacube
+- tag:Crop-type-Classification
+- tag:EO Data
+maintainers:
+- name: b64d5874-3ad7-45f3-be6f-fad5bb03f2bc
+name: 789d5aa4-1786-4528-8199-8fb4c5dff700
+version: 1.2.100
