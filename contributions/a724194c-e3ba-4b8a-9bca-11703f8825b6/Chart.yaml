@@ -1,0 +1,16 @@
+apiVersion: v1
+appVersion: v1.0
+description: Test EO Master 4000
+icon: https://raw.githubusercontent.com/eurodatacube/charts/master/a724194c-e3ba-4b8a-9bca-11703f8825b6/index.png?sanitize=true
+keywords:
+- license:MIT
+- requirement:eurodatacube-geodb
+- requirement:eurodatacube
+- tag:GeoDB
+- tag:Download Service
+maintainers:
+- name: b64d5874-3ad7-45f3-be6f-fad5bb03f2bc
+name: a724194c-e3ba-4b8a-9bca-11703f8825b6
+sources:
+- totycro/edc-contribution-1
+version: 1.2.100
