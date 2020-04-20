@@ -1,0 +1,16 @@
+apiVersion: v1
+appVersion: v1.0
+description: test app
+icon: https://raw.githubusercontent.com/eurodatacube/charts/master/fc6a2458-8a4d-40dd-91ba-3aa853b17ff6/index.png?sanitize=true
+keywords:
+- license:MIT
+- requirement:eurodatacube
+- requirement:eurodatacube-geodb
+- tag:EO Data
+- tag:Download Service
+maintainers:
+- name: b64d5874-3ad7-45f3-be6f-fad5bb03f2bc
+name: fc6a2458-8a4d-40dd-91ba-3aa853b17ff6
+sources:
+- totycro/edc-contribution-1
+version: 1.0.0
