@@ -1,0 +1,17 @@
+apiVersion: v1
+appVersion: v1.0
+description: Test 4
+icon: https://raw.githubusercontent.com/eurodatacube/charts/master/b323352e-afb6-45ce-b233-5416c2320758/jupyter.svg?sanitize=true
+keywords:
+- license:Commercial
+- license_notes:Test 234
+- license_price:234
+- requirement:eurodatacube
+- tag:Test
+- tag:Te
+maintainers:
+- name: 99b5219e-34a3-409a-954e-ffde99b46729
+name: b323352e-afb6-45ce-b233-5416c2320758
+sources:
+- eurodatacube/ogc-edc
+version: '1'
