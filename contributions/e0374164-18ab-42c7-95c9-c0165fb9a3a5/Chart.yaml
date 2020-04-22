@@ -1,0 +1,15 @@
+apiVersion: v1
+appVersion: v1.0
+description: Test App
+icon: https://raw.githubusercontent.com/eurodatacube/charts/master/e0374164-18ab-42c7-95c9-c0165fb9a3a5/AIRBUS_Blue.png?sanitize=true
+keywords:
+- license:Commercial
+- requirement:eurodatacube-geodb
+- tag:Test
+- tag:test
+maintainers:
+- name: 99b5219e-34a3-409a-954e-ffde99b46729
+name: e0374164-18ab-42c7-95c9-c0165fb9a3a5
+sources:
+- eurodatacube/datacube-ows
+version: '1'
