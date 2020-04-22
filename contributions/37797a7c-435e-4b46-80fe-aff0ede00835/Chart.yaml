@@ -1,0 +1,17 @@
+apiVersion: v1
+appVersion: v1.0
+description: Test App 2
+icon: https://raw.githubusercontent.com/eurodatacube/charts/master/37797a7c-435e-4b46-80fe-aff0ede00835/574px-NASA_logo.svg.png?sanitize=true
+keywords:
+- license:Commercial
+- license_notes:undefined
+- license_price:200
+- requirement:eurodatacube
+- tag:Test
+- tag:tes
+maintainers:
+- name: 99b5219e-34a3-409a-954e-ffde99b46729
+name: 37797a7c-435e-4b46-80fe-aff0ede00835
+sources:
+- eurodatacube/ogc-edc
+version: '2'
