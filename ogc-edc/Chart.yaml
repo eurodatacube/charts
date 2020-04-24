@@ -2,10 +2,11 @@ apiVersion: v1
 appVersion: "v1.0"
 description: "EDC OGC Layer"
 name: ogc-edc
-version: 0.13.0
+version: 0.13.3
 keywords:
-- license:MIT
+- license:Free
 - requirement:eurodatacube
+- requirement:eoxhub
 - tag:Open Standard
 - tag:View Service
 - tag:Download Service
