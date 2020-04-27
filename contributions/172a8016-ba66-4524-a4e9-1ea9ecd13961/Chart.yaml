@@ -1,0 +1,16 @@
+apiVersion: v1
+appVersion: v1.0
+description: Edc Contribution
+icon: https://raw.githubusercontent.com/eurodatacube/charts/master/172a8016-ba66-4524-a4e9-1ea9ecd13961/Screenshot_2020-04-14_18-37-39.png?sanitize=true
+keywords:
+- license:Commercial
+- license_notes:null
+- license_price:10000
+- requirement:eurodatacube
+- tag:GPU
+maintainers:
+- name: 0c0a0ef4-8d0d-4e70-b002-033c7cbb41fd
+name: 172a8016-ba66-4524-a4e9-1ea9ecd13961
+sources:
+- totycro/edc-contribution-1
+version: 0.0.1
