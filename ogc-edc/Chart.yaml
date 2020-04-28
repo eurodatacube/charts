@@ -2,7 +2,7 @@ apiVersion: v1
 appVersion: "v1.0"
 description: "EDC OGC Layer"
 name: ogc-edc
-version: 0.13.3
+version: 0.13.5
 keywords:
 - license:Free
 - requirement:eurodatacube
