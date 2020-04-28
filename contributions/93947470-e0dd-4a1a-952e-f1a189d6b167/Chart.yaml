@@ -1,0 +1,17 @@
+apiVersion: v1
+appVersion: v1.0
+description: SHM Request Timer
+icon: https://raw.githubusercontent.com/eurodatacube/charts/master/93947470-e0dd-4a1a-952e-f1a189d6b167/stopwatch-34108.png?sanitize=true
+keywords:
+- license:Commercial
+- license_notes:null
+- license_price:1
+- requirement:eurodatacube
+- tag:Sentinel Hub
+- tag:Mass Processing
+maintainers:
+- name: 910be60e-784b-44e4-9d4e-06ff086b660f
+name: 93947470-e0dd-4a1a-952e-f1a189d6b167
+sources:
+- StefanBrand/poll-shm
+version: 0.1.0
