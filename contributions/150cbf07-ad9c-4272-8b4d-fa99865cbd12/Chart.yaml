@@ -1,0 +1,16 @@
+apiVersion: v1
+appVersion: v1.0
+description: test
+icon: https://raw.githubusercontent.com/eurodatacube/charts/master/150cbf07-ad9c-4272-8b4d-fa99865cbd12/index.png?sanitize=true
+keywords:
+- license:Commercial
+- license_notes:1234
+- license_price:3124
+- requirement:eoxhub
+- tag:123
+maintainers:
+- name: 0c0a0ef4-8d0d-4e70-b002-033c7cbb41fd
+name: 150cbf07-ad9c-4272-8b4d-fa99865cbd12
+sources:
+- totycro/edc-contribution-1
+version: 0.1.1
