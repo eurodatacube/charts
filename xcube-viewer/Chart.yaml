@@ -4,6 +4,8 @@ description: EDC xcube Viewer
 icon: https://raw.githubusercontent.com/eurodatacube/charts/master/xcube-viewer/index.png?sanitize=true
 keywords:
 - license:Free
+- requirement:eurodatacube-xcube-gen
+- requirement:eoxhub
 maintainers:
 name: xcube-viewer
 sources:
