@@ -1,7 +1,7 @@
 apiVersion: v1
 appVersion: v1.0
 description: EDC Contribution License Demo
-icon: https://raw.githubusercontent.com/eurodatacube/charts/master/license-demo/edc-logo.png?sanitize=true
+icon: https://raw.githubusercontent.com/eurodatacube/charts/master/license-demo/logo.svg?sanitize=true
 keywords:
 - license:Commercial
 - license_notes:Details about license
