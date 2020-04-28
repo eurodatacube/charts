@@ -1,0 +1,16 @@
+apiVersion: v1
+appVersion: v1.0
+description: EDC Contribution License Demo
+icon: https://raw.githubusercontent.com/eurodatacube/charts/master/license-demo/edc-logo.png?sanitize=true
+keywords:
+- license:Commercial
+- license_notes:Details about license
+- license_price:99
+- requirement:eurodatacube
+- tag:Sentinel Hub
+maintainers:
+- name: 0c0a0ef4-8d0d-4e70-b002-033c7cbb41fd
+name: license-demo
+sources:
+- totycro/edc-contribution-1
+version: 0.0.1
