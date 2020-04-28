@@ -8,6 +8,7 @@ keywords:
 - license_price:99
 - requirement:eurodatacube
 - requirement:demo-license
+- requirement:eoxhub
 - tag:Sentinel Hub
 maintainers:
 - name: 0c0a0ef4-8d0d-4e70-b002-033c7cbb41fd
