@@ -1,0 +1,18 @@
+apiVersion: v1
+appVersion: v1.0
+description: test
+icon: https://raw.githubusercontent.com/eurodatacube/charts/master/68d4c89b-eb36-4d20-81c6-1c2a6d10bafc/edc-logo.png?sanitize=true
+keywords:
+- license:null
+- 'license_notes:'
+- 'license_price:'
+- requirement:eurodatacube
+- requirement:eurodatacube-geodb
+- requirement:eurodatacube-xcube-gen
+- tag:test
+maintainers:
+- name: 0c0a0ef4-8d0d-4e70-b002-033c7cbb41fd
+name: 68d4c89b-eb36-4d20-81c6-1c2a6d10bafc
+sources:
+- totycro/edc-contribution-1
+version: 0.0.1
