@@ -1,0 +1,10 @@
+apiVersion: v1
+appVersion: v1.0
+description: xcube Viewer
+icon: https://raw.githubusercontent.com/eurodatacube/charts/master/xcube-viewer/index.png?sanitize=true
+keywords:
+- license:Free
+maintainers:
+name: xcube-viewer
+sources:
+version: 1.0.0
