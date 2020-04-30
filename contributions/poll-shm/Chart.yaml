@@ -1,7 +1,7 @@
 apiVersion: v1
 appVersion: v1.0
 description: SHM Request Timer
-icon: https://raw.githubusercontent.com/eurodatacube/charts/master/poll-shm/stopwatch-34108.png?sanitize=true
+icon: https://raw.githubusercontent.com/eurodatacube/charts/master/contributions/poll-shm/stopwatch-34108.png?sanitize=true
 keywords:
 - license:Free
 - 'license_notes:'
