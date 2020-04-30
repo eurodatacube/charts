@@ -4,8 +4,8 @@ description: SHM Request Timer
 icon: https://raw.githubusercontent.com/eurodatacube/charts/master/poll-shm/stopwatch-34108.png?sanitize=true
 keywords:
 - license:Free
-- "license_notes:"
-- "license_price:"
+- 'license_notes:'
+- 'license_price:'
 - requirement:eurodatacube
 - requirement:eoxhub
 - tag:Sentinel Hub
@@ -15,4 +15,4 @@ maintainers:
 name: poll-shm
 sources:
 - StefanBrand/poll-shm
-version: 0.1.0
+version: 0.1.1
