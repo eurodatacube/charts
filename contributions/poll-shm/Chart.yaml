@@ -3,11 +3,10 @@ appVersion: v1.0
 description: SHM Request Timer
 icon: https://raw.githubusercontent.com/eurodatacube/charts/master/poll-shm/stopwatch-34108.png?sanitize=true
 keywords:
-- license:null
+- license:Free
 - 'license_notes:'
 - 'license_price:'
 - requirement:eurodatacube
-- requirement:eoxhub
 - requirement:eoxhub
 - tag:Sentinel Hub
 - tag:Mass Processing
