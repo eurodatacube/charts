@@ -11,7 +11,9 @@ metadata:
     nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
     kubernetes.io/tls-acme: "true"
     nginx.ingress.kubernetes.io/enable-cors: 'true'
-    nginx.ingress.kubernetes.io/app-root: /viewer/
+    # this is a reimplementation of the "app-root" annotation, but
+    # if done like this, CORS headers are actually sent.
+    nginx.ingress.kubernetes.io/configuration-snippet: 'location = "/" { return 302 /viewer/; } '
 spec:
   rules:
     - host: {{ .Release.Name }}.{{ .Release.Namespace }}.hub.eox.at
