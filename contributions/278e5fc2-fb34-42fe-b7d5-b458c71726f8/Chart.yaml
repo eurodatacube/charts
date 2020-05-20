@@ -1,0 +1,16 @@
+apiVersion: v1
+appVersion: v1.0
+description: github-issue-creator
+icon: https://raw.githubusercontent.com/eurodatacube/charts/master/contributions/278e5fc2-fb34-42fe-b7d5-b458c71726f8/EDC_logo_app.svg?sanitize=true
+keywords:
+- license:null
+- 'license_notes:'
+- 'license_price:'
+- requirement:eoxhub
+- tag:View Service
+maintainers:
+- name: 0c0a0ef4-8d0d-4e70-b002-033c7cbb41fd
+name: 278e5fc2-fb34-42fe-b7d5-b458c71726f8
+sources:
+- totycro/edc-contribution-1
+version: 0.0.1
