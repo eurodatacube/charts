@@ -5,12 +5,5 @@ metadata:
   labels:
 {{ include "base.labels" . | indent 4 }}
 spec:
-  type: ClusterIP
-  ports:
-    - port: 80
-      targetPort: http
-      protocol: TCP
-      name: http
-  selector:
-    app.kubernetes.io/name: {{ include "base.name" . }}
-    app.kubernetes.io/instance: {{ .Release.Name }}
+  type: ExternalName
+  externalName: ogc-edc-tb16-dapa.hub.eox.at
