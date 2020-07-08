@@ -1,0 +1,19 @@
+apiVersion: v1
+appVersion: "v1.0"
+description: "OGC Testbed 16 DAPA experimental interfaces"
+name: ogc-edc-tb16-dapa
+version: 0.13.8-dapa-0.0.2
+keywords:
+- license:Free
+- requirement:eurodatacube
+- requirement:eoxhub
+- tag:Open Standard
+- tag:View Service
+- tag:Download Service
+sources:
+- eurodatacube/ogc-edc
+
+maintainers:
+  - name: EOX IT Services GmbH
+    url: https://eox.at
+icon: "https://eox.at/wp-content/uploads/2017/09/EOX_Logo.svg"
