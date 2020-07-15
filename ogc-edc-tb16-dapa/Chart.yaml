@@ -7,8 +7,8 @@ keywords:
 - license:Free
 - requirement:eoxhub
 - tag:Open Standard
-- tag:View Service
 - tag:Download Service
+- tag:DAPA
 sources:
 - eurodatacube/ogc-edc
 
