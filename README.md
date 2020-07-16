@@ -8,3 +8,5 @@
 4) upload package to Chart Repository, e.g. by  
   `kubectl cp ogc-edc-tb16-dapa-0.0.0-latest.tgz edc-dev/edc-dev-edc-charts-chartmuseum-<INSERT CURRENT POD HASH>:/storage`  
   (and for production without `dev`)
+
+Then wait up to 10 minutes or click refresh in the kubeapps web interface.
