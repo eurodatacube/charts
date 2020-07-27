@@ -48,11 +48,27 @@ We have made the following tutorials as Jupyter Notebooks available:
 4. [DAPA Tutorial #4: Value - Sentinel-2 - OGC Testbed 16](https://eurodatacube.com/marketplace/notebooks/contributions/DAPA/DAPA_Tutorial_4_-_Value_-_Sentinel-2.ipynb)
 5. [DAPA Tutorial #5: DEM example – OGC Testbed 16](https://eurodatacube.com/marketplace/notebooks/contributions/DAPA/DAPA_Tutorial_5_-_DEM.ipynb)
 
+## Datasets
+This DAPA service endpoint is based on the EuroDataCube environment, which allows us to provide acess to a wide range of
+  datasets:
+- Sentinel-1 GRD
+- Sentinel-2 L1C and L2A
+- Sentinel-3 OLCI and SLSTR
+- Sentinel-5P L2 `(currently not supported)`
+- Landsat-8 L1C (ESA archive)
+- MODIS
+- DEM
+
+**Please note:** The API might not work with every dataset. It has been teste successfully with Sentinel-2, Sentinel-3, and the Digital Elevation Model (DEM).
+
 ## API Documentation
 
 This API definition has been developed by EOX and DLR. This definition focuses on the provision of raster/coverage data, but might also be applied for scattered time-series data. 
 
-**Please note:** This is an early draft proposal of the API definition. It is subject to change within the time frame of OGC Testbed 16. Also other proposals exist with different API definitions.
+**Please note #1:** This is an early draft proposal of the API definition. It is subject to change within the time
+ frame of OGC Testbed 16. Also other proposals exist with different API definitions.
+
+**Please note #2:** Not any feature of the API is currently supported by the DAPA app on the EuroDataCube environment.
 
 **Overview of URL endpoints:**
 
