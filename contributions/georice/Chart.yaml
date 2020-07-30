@@ -1,7 +1,7 @@
 apiVersion: v1
 appVersion: v1.0
 description: Georice
-icon: https://raw.githubusercontent.com/eurodatacube/charts/master/contributions/5f75e4d9-9955-44ed-8cbc-20d7ac121328/rice_icon.png?sanitize=true
+icon: https://raw.githubusercontent.com/eurodatacube/charts/master/contributions/georice/rice_icon.png?sanitize=true
 keywords:
 - license:null
 - 'license_notes:'
