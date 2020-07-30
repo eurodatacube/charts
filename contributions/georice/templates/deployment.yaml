@@ -46,6 +46,14 @@ spec:
               value: {{ $value | quote }}
           {{- end }}
           {{- end }}
+          command:
+            - jupyter
+            - notebook
+            - --port=5000
+            - --ip=0.0.0.0
+            - --allow-root
+            - --notebook-dir=home/georice/jupyter/
+            - --NotebookApp.token=''
       nodeSelector: {}
       affinity:
         nodeAffinity:
