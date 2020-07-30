@@ -11,7 +11,7 @@ keywords:
 - tag:Crop-type-Classification
 maintainers:
 - name: 6ffbb9af-8240-44a8-bfa5-2bd5ad8c1740
-name: 5f75e4d9-9955-44ed-8cbc-20d7ac121328
+name: georice
 sources:
 - gisat/georice
 version: 6.0.3
