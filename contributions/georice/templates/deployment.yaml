@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: {{ include "base.name" . }}
-          image: eurodatacube/5f75e4d9-9955-44ed-8cbc-20d7ac121328:{{ .Chart.Version }}
+          image: eurodatacube/georice:{{ .Chart.Version }}
           ports:
             - name: http
               containerPort: 5000
