@@ -1,0 +1,17 @@
+apiVersion: v1
+appVersion: v1.0
+description: Georice
+icon: https://raw.githubusercontent.com/eurodatacube/charts/master/contributions/georice/rice_icon.png?sanitize=true
+keywords:
+- license:null
+- 'license_notes:'
+- 'license_price:'
+- requirement:eoxhub
+- requirement:eurodatacube
+- tag:Crop-type-Classification
+maintainers:
+- name: 6ffbb9af-8240-44a8-bfa5-2bd5ad8c1740
+name: 5f75e4d9-9955-44ed-8cbc-20d7ac121328
+sources:
+- gisat/georice
+version: 6.0.3
