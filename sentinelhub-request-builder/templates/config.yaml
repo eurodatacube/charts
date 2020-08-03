@@ -13,8 +13,8 @@ data:
 
         location / {
             proxy_pass https://webdev.sentinel-hub.com/tmp/requests-builder/feature-edc-deployment/;
-            proxy_set_header X-SH-CLIENT-ID ${SH_CLIENT_ID};
-            proxy_set_header X-SH-CLIENT-SECRET ${SH_CLIENT_SECRET};
+            proxy_set_header X-SH-CLIENT-ID "${SH_CLIENT_ID}";
+            proxy_set_header X-SH-CLIENT-SECRET "${SH_CLIENT_SECRET}";
         }
 
     }
