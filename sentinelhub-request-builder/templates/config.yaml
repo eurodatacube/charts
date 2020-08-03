@@ -1,0 +1,22 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: {{ include "base.fullname" . }}
+  labels:
+{{ include "base.labels" . | indent 4 }}
+data:
+  nginx.conf.template: |
+
+    server {
+
+        listen 5000;
+
+        location / {
+            proxy_pass https://request.urih.com;
+            proxy_set_header X-SH-CLIENT-ID ${SH_CLIENT_ID};
+            proxy_set_header X-SH-CLIENT-SECRET ${SH_CLIENT_SECRET};
+        }
+
+    }
+
+
