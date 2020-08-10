@@ -14,4 +14,4 @@ maintainers:
 name: georice
 sources:
 - gisat/georice
-version: 6.0.3
+version: 6.0.3-wildcard
