@@ -5,7 +5,7 @@ metadata:
   labels:
 {{ include "base.labels" . | indent 4 }}
 spec:
-  replicas: 1
+  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
       app.kubernetes.io/name: {{ include "base.name" . }}
@@ -16,9 +16,13 @@ spec:
         app.kubernetes.io/name: {{ include "base.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
+    {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
       containers:
         - name: {{ include "base.name" . }}
-          image: nginx:1.19.2-alpine
+          image: eurodatacube/developer-sandbox:{{ .Chart.Version }}
           ports:
             - name: http
               containerPort: 5000
@@ -40,13 +44,6 @@ spec:
               value: {{ $value | quote }}
           {{- end }}
           {{- end }}
-          volumeMounts:
-          - name: "nginx-config"
-            mountPath: "/etc/nginx/templates"
-      volumes:
-      - name: nginx-config
-        configMap:
-          name: {{ include "base.fullname" . }}
       nodeSelector: {}
       affinity:
         nodeAffinity:

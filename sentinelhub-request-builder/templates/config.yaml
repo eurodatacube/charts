@@ -11,12 +11,15 @@ data:
 
         listen 5000;
 
+        location /token_sentinel_hub {
+            proxy_set_header "X-SH-CLIENT-ID" "${SH_CLIENT_ID}";
+            proxy_set_header "X-SH-CLIENT-SECRET" "${SH_CLIENT_SECRET}";
+
+            proxy_pass https://sentinelhub-token-creator.hub.eox.at/token;
+        }
+
         location / {
-            proxy_pass https://webdev.sentinel-hub.com/tmp/requests-builder/feature-edc-deployment/;
-            proxy_set_header X-SH-CLIENT-ID "${SH_CLIENT_ID}";
-            proxy_set_header X-SH-CLIENT-SECRET "${SH_CLIENT_SECRET}";
+            root /usr/share/nginx/html;
         }
 
     }
-
-
