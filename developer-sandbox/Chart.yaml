@@ -1,0 +1,16 @@
+apiVersion: v1
+appVersion: "v1.0"
+description: "EDC Developer Sandbox"
+name: developer-sandbox
+version: 0.0.1
+keywords:
+- license:Free
+- requirement:eurodatacube
+- requirement:eoxhub
+sources:
+- eurodatacube/developer-sandbox
+
+maintainers:
+  - name: Euro Data Cube Consortium
+    url: https://eurodatacube.com
+icon: "https://raw.githubusercontent.com/eurodatacube/charts/master/developer-sandbox/EDC_logo_app.svg?sanitize=true"
