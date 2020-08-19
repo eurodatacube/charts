@@ -8,7 +8,6 @@ keywords:
 - requirement:eurodatacube
 - requirement:eoxhub
 sources:
-- eurodatacube/developer-sandbox
 
 maintainers:
   - name: Euro Data Cube Consortium
