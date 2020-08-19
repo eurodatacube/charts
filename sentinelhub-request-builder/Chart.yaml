@@ -1,0 +1,15 @@
+apiVersion: v1
+appVersion: "v1.0"
+description: "SentinelHub Request Builder"
+name: sentinelhub-request-builder
+version: 0.1.0
+keywords:
+- license:Free
+- requirement:eurodatacube
+- requirement:eoxhub
+sources: []
+
+maintainers:
+  - name: Euro Data Cube Consortium
+    url: https://eurodatacube.com
+# icon: "https://raw.githubusercontent.com/eurodatacube/charts/master/ogc-edc/EDC_logo_app.svg?sanitize=true"
