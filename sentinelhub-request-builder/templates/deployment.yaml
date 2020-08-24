@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: {{ include "base.name" . }}
-          image: nginx:1.19.2-alpine
+          image: eurodatacube/requests-builder:{{ .Chart.Version }}
           ports:
             - name: http
               containerPort: 5000
