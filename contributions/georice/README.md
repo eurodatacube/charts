@@ -6,7 +6,7 @@ The processor can not be used without specifying of Sentinel hub credentials:
 * client_secret
 * instance_id
 
-Rice map generation consisting of three steps. Acquisition of orthorectified and Gamma 0 Backscattered scenes from SentinelHub, applying of SAR multi-temporal speckle filter developed by CNES (http://tully.ups-tlse.fr/koleckt/georice/tree/master/filtering). This step is optional. The last step is the generation of classified rice map itself.
+Rice map generation consisting of three steps. Acquisition of orthorectified and Gamma 0 Backscattered scenes from SentinelHub, applying of SAR multi-temporal speckle filter developed by CNES. This step is optional. The last step is the generation of classified rice map itself.
 
 *EuroDataCube version*
 
