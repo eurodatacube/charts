@@ -1,4 +1,6 @@
-Georice processor creates classified maps of the presence of rice fields based on Sentinel 1A and Sentinel 1B imagery. Classification script was created by CNES. Sentinel 1 scenes are acquired from Sentinel-hub (https://www.sentinel-hub.com/).
+Georice processor (Demo) creates classified maps of the presence of rice fields based on Sentinel 1A and Sentinel 1B imagery. Author of the classification algorithm is CESBIO. Sentinel 1 scenes are acquired from Sentinel-hub (https://www.sentinel-hub.com/).
+
+Note: Currently Georice processor is under validation 
 
 The processor can not be used without specifying of Sentinel hub credentials:
 
