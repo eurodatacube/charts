@@ -1,0 +1,68 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "base.fullname" . }}
+  labels:
+{{ include "base.labels" . | indent 4 }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ include "base.name" . }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: {{ include "base.name" . }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+    spec:
+      serviceAccountName: {{ include "base.fullname" . }}
+      containers:
+        - name: {{ include "base.name" . }}
+          image: eurodatacube/pygeoapi-eoxhub:{{ .Chart.Version }}
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+          env:
+          {{- range $name, $value := .Values.env }}
+          {{- if not (empty $value) }}
+            - name: {{ $name | quote }}
+              value: {{ $value | quote }}
+          {{- end }}
+          {{- end }}
+          livenessProbe:
+            httpGet:
+              path: /conformance
+              port: 80
+          readinessProbe:
+            httpGet:
+              path: /conformance
+              port: 80
+          env:
+          - name: CUSTOMER_OPERATOR_USER
+            value: readonly
+          - name: CUSTOMER_OPERATOR_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: customer-operator-readonly
+                key: password
+          volumeMounts:
+          - name: pygeoapi-config
+            mountPath: "/pygeoapi/local.config.yml"
+            subPath: local.config.yml
+      volumes:
+      - name: pygeoapi-config
+        configMap:
+          name: {{ include "base.fullname" . }}
+      nodeSelector: {}
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: hub.jupyter.org/node-purpose
+                operator: In
+                values:
+                - user
+      tolerations: []
