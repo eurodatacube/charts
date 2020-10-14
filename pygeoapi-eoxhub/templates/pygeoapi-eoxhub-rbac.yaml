@@ -28,4 +28,7 @@ rules:
     resources:
       - jobs
       - jobs/status
-
+  - apiGroups: [""]
+    verbs: ["get"]
+    resources:
+      - resourcequotas
