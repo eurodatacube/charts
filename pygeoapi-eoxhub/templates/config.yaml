@@ -70,6 +70,5 @@ data:
         type: process
         processor:
           name: pygeoapi.process.notebook.PapermillNotebookKubernetesProcessor
-          nfs_server: "{{ .Values.nfsServer }}"
-          nfs_share: "{{ .Values.nfsShare }}"
+          default_image: "{{ .Values.defaultImage }}"
 
