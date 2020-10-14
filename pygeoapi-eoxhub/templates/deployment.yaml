@@ -39,14 +39,6 @@ spec:
             httpGet:
               path: /conformance
               port: 80
-          env:
-          - name: CUSTOMER_OPERATOR_USER
-            value: readonly
-          - name: CUSTOMER_OPERATOR_PASSWORD
-            valueFrom:
-              secretKeyRef:
-                name: customer-operator-readonly
-                key: password
           resources:
             limits:
               cpu: "1"
