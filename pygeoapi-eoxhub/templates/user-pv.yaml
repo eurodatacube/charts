@@ -18,7 +18,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   nfs:
     server: "{{ .Values.nfsServer }}"
-    path: "{{ .Values.nfsShare }}/users/{{ .Release.Namespace | replace '-' '-2d' }}"
+    path: "/{{ .Values.nfsShare }}/users/{{ .Release.Namespace | replace "-" "-2d" }}"
   claimRef:
     name: user
     namespace: {{ .Release.Namespace }}
