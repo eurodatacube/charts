@@ -42,11 +42,16 @@ spec:
           {{- end }}
           volumeMounts:
           - name: "nginx-config"
-            mountPath: "/etc/nginx/templates"
+            mountPath: "/docker-entrypoint.d/15-export-dns-server-ip.sh"
+            subPath: "15-export-dns-server-ip.sh"
+          - name: "nginx-config"
+            mountPath: "/tmp/nginx.conf.template"
+            subPath: "nginx.conf.template"
       volumes:
       - name: nginx-config
         configMap:
           name: {{ include "base.fullname" . }}
+          defaultMode: 0777
       nodeSelector: {}
       affinity:
         nodeAffinity:
