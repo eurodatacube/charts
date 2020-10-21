@@ -71,9 +71,3 @@ data:
         processor:
           name: pygeoapi.process.notebook.PapermillNotebookKubernetesProcessor
           default_image: "{{ .Values.defaultImage }}"
-          {{- if .Values.s3_bucket.enabled }}
-          s3_bucket:
-            name: "{{ .Values.s3_bucket.name }}"
-            secret: "{{ .Values.s3_bucket.secret }}"
-          {{- end -}}
-

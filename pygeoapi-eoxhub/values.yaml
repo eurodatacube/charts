@@ -1,8 +1,3 @@
 nfsServer: "fs-67cadc3e.efs.eu-central-1.amazonaws.com"
 nfsShare: "edc-jupyter-user-pvc-3157bd51-f57d-11e9-adac-062139e27092"
 defaultImage: "eurodatacube/jupyter-user:0.21.2"
-
-s3_bucket:
-  enabled: false
-  name: ""
-  secret: ""
