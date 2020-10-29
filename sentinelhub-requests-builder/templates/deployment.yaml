@@ -47,6 +47,13 @@ spec:
           - name: "nginx-config"
             mountPath: "/tmp/nginx.conf.template"
             subPath: "nginx.conf.template"
+          resources:
+            limits:
+              cpu: "0.3"
+              memory: "256Mi"
+            requests:
+              cpu: "0.1"
+              memory: "32Mi"
       volumes:
       - name: nginx-config
         configMap:

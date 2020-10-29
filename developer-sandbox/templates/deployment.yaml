@@ -43,6 +43,13 @@ spec:
           volumeMounts:
           - name: "nginx-config"
             mountPath: "/etc/nginx/templates"
+          resources:
+            limits:
+              cpu: "0.3"
+              memory: "256Mi"
+            requests:
+              cpu: "0.1"
+              memory: "32Mi"
       volumes:
       - name: nginx-config
         configMap:

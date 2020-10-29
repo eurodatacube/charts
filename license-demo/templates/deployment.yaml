@@ -46,6 +46,13 @@ spec:
               value: {{ $value | quote }}
           {{- end }}
           {{- end }}
+          resources:
+            limits:
+              cpu: "0.3"
+              memory: "256Mi"
+            requests:
+              cpu: "0.1"
+              memory: "32Mi"
       nodeSelector: {}
       affinity:
         nodeAffinity:
