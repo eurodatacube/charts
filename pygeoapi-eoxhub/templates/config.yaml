@@ -71,4 +71,9 @@ data:
         processor:
           name: pygeoapi.process.notebook.PapermillNotebookKubernetesProcessor
           default_image: "{{ .Values.defaultImage }}"
+          image_pull_secret: "{{ .Values.imagePullSecret }}"
           s3_bucket_name: "{{ .Values.s3BucketNamePrefix}}-{{ .Release.Namespace }}"
+          home_volume_claim_name: "{{ if .Values.existingNfs.enabled }}user{{ end }}"
+          extra_pvcs:
+            {{- toYaml .Values.extraPvcs | nindent 10 }}
+          jupyter_base_url: "{{ .Values.jupyterBaseUrl }}"

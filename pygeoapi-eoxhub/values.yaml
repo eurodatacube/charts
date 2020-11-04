@@ -1,4 +1,16 @@
-nfsServer: "fs-67cadc3e.efs.eu-central-1.amazonaws.com"
-nfsShare: "edc-jupyter-user-pvc-3157bd51-f57d-11e9-adac-062139e27092"
+existingNfs:
+  enabled: true
+  nfsServer: "fs-67cadc3e.efs.eu-central-1.amazonaws.com"
+  nfsShare: "edc-jupyter-user-pvc-3157bd51-f57d-11e9-adac-062139e27092"
+
+
+extraPvcs: []
+  #- claim_name: ama-jupyter-eox
+  #  mount_path: /home/jovyan/eox
+
+
 defaultImage: "eurodatacube/jupyter-user:0.21.2"
+imagePullSecret: ""
 s3BucketNamePrefix: "edc"
+
+jupyterBaseUrl: "https://edc-jupyter.hub.eox.at"
