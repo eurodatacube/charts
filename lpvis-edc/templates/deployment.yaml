@@ -71,11 +71,11 @@ spec:
           {{- end }}
           resources:
             limits:
-              cpu: "1"
-              memory: "1Gi"
+              cpu: "200m"
+              memory: "800M"
             requests:
-              cpu: "0.1"
-              memory: "32Mi"
+              cpu: "100m"
+              memory: "400M"
       nodeSelector: {}
       affinity:
         nodeAffinity:
