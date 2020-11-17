@@ -15,6 +15,10 @@ spec:
       labels:
         app.kubernetes.io/name: {{ include "base.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
+      annotations:
+        # force k8s to restart pod to apply config changes
+        # https://v3.helm.sh/docs/howto/charts_tips_and_tricks/#automatically-roll-deployments
+        rollme: {{ randAlphaNum 5 | quote }}
     spec:
       containers:
         - name: {{ include "base.name" . }}
