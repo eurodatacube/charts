@@ -74,6 +74,10 @@ data:
           image_pull_secret: "{{ .Values.imagePullSecret }}"
           s3_bucket_name: "{{ .Values.s3BucketNamePrefix}}-{{ .Release.Namespace }}"
           home_volume_claim_name: "{{ if .Values.existingNfs.enabled }}user{{ end }}"
+          {{ if empty .Values.extraPvcs }}
+          extra_pvcs: []
+          {{ else }}
           extra_pvcs:
             {{- toYaml .Values.extraPvcs | nindent 10 }}
+          {{ end }}
           jupyter_base_url: "{{ .Values.jupyterBaseUrl }}"
