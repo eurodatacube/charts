@@ -11,6 +11,10 @@ extraPvcs: []
 
 defaultImage: "eurodatacube/jupyter-user:0.21.2"
 imagePullSecret: ""
-s3BucketNamePrefix: "edc"
+
+s3:
+  enabled: false
+  bucketName: ""
+  secretName: "s3-bucket"
 
 jupyterBaseUrl: "https://edc-jupyter.hub.eox.at"

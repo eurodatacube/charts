@@ -72,7 +72,11 @@ data:
           name: pygeoapi.process.notebook.PapermillNotebookKubernetesProcessor
           default_image: "{{ .Values.defaultImage }}"
           image_pull_secret: "{{ .Values.imagePullSecret }}"
-          s3_bucket_name: "{{ .Values.s3BucketNamePrefix}}-{{ .Release.Namespace }}"
+          {{ if .Values.s3.enabled }}
+          s3:
+            bucket_name: "{{ .Values.s3.bucketName }}"
+            secret_name: "{{ .Values.s3.secretName }}"
+          {{ end }}
           home_volume_claim_name: "{{ if .Values.existingNfs.enabled }}user{{ end }}"
           {{ if empty .Values.extraPvcs }}
           extra_pvcs: []
