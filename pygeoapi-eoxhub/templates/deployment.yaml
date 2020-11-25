@@ -54,10 +54,16 @@ spec:
           - name: pygeoapi-config
             mountPath: "/pygeoapi/local.config.yml"
             subPath: local.config.yml
+          - name: user-home
+            # mount same as actual user pod such that we don't have to translate dirs
+            mountPath: /home/jovyan
       volumes:
       - name: pygeoapi-config
         configMap:
           name: {{ include "base.fullname" . }}
+      - name: user-home
+        persistentVolumeClaim:
+          claimName: user
       nodeSelector: {}
       affinity:
         nodeAffinity:
