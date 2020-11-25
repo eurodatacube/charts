@@ -54,16 +54,29 @@ spec:
           - name: pygeoapi-config
             mountPath: "/pygeoapi/local.config.yml"
             subPath: local.config.yml
+          {{ if .Values.existingNfs.enabled }}
           - name: user-home
             # mount same as actual user pod such that we don't have to translate dirs
             mountPath: /home/jovyan
+          {{ end }}
+          {{ range $pvcIndex, $extraPvc := .Values.extraPvcs }}
+          - name: extra-{{ $pvcIndex }}
+            mountPath: {{ $extraPvc.mount_path }}
+          {{ end }}
       volumes:
       - name: pygeoapi-config
         configMap:
           name: {{ include "base.fullname" . }}
+      {{ if .Values.existingNfs.enabled }}
       - name: user-home
         persistentVolumeClaim:
           claimName: user
+      {{ end }}
+      {{ range $pvcIndex, $extraPvc := .Values.extraPvcs }}
+      - name: extra-{{ $pvcIndex }}
+        persistentVolumeClaim:
+          claimName: {{ $extraPvc.claim_name }}
+      {{ end }}
       nodeSelector: {}
       affinity:
         nodeAffinity:
