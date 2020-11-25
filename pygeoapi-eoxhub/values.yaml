@@ -18,3 +18,5 @@ s3:
   secretName: "s3-bucket"
 
 jupyterBaseUrl: "https://edc-jupyter.hub.eox.at"
+
+outputDirectory: "/home/jovyan/job-output"
