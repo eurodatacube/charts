@@ -9,7 +9,7 @@ extraPvcs: []
   #  mount_path: /home/jovyan/eox
 
 
-defaultImage: "eurodatacube/jupyter-user:0.21.2"
+defaultImage: "eurodatacube/jupyter-user:0.22.1"
 imagePullSecret: ""
 
 s3:
