@@ -20,6 +20,8 @@ s3:
 
 jupyterBaseUrl: "https://edc-jupyter.hub.eox.at"
 
+# ingressUrl: "foo.example.com"
+
 outputDirectory: "/home/jovyan/job-output"
 
 affinity:

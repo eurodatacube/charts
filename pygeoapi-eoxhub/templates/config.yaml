@@ -10,7 +10,7 @@ data:
         bind:
             host: 0.0.0.0
             port: 80
-        url: https://{{ .Release.Name }}.{{ .Release.Namespace }}.hub.eox.at
+        url: {{ include "base.ingressUrl" . }}
         mimetype: application/json; charset=UTF-8
         encoding: utf-8
         language: en-US

@@ -11,7 +11,7 @@ metadata:
     nginx.ingress.kubernetes.io/enable-cors: 'true'
 spec:
   rules:
-  - host: {{ .Release.Name }}.{{ .Release.Namespace }}.hub.eox.at
+  - host: {{ include "base.ingressUrl" . }}
     http:
       paths:
       - backend:
@@ -20,5 +20,5 @@ spec:
         path: /
   tls:
   - hosts:
-    - {{ .Release.Name }}.{{ .Release.Namespace }}.hub.eox.at
+    - {{ include "base.ingressUrl" . }}
     secretName: wildcard-tls

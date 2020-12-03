@@ -38,3 +38,10 @@ app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{- end -}}
+
+
+{{- define "base.ingressUrl" -}}
+{{- if .Values.ingressUrl -}}
+    {{- .Values.ingressUrl -}}
+{{- else -}}{{ .Release.Name }}.{{ .Release.Namespace }}.hub.eox.at{{- end -}}
+{{- end -}}
