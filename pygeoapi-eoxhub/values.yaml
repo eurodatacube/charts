@@ -16,6 +16,7 @@ s3:
   enabled: false
   bucketName: ""
   secretName: "s3-bucket"
+  s3Url: "https://s3-eu-central-1.amazonaws.com"
 
 jupyterBaseUrl: "https://edc-jupyter.hub.eox.at"
 
