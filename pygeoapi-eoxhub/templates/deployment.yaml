@@ -23,7 +23,7 @@ spec:
       serviceAccountName: {{ include "base.fullname" . }}
       containers:
         - name: {{ include "base.name" . }}
-          image: eurodatacube/pygeoapi-eoxhub:{{ .Chart.Version }}
+          image: eurodatacube/pygeoapi-eoxhub:{{ .Chart.AppVersion }}
           ports:
             - name: http
               containerPort: 80
@@ -78,13 +78,8 @@ spec:
           claimName: {{ $extraPvc.claim_name }}
       {{ end }}
       nodeSelector: {}
+      {{- if .Values.affinity }}
       affinity:
-        nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-            - matchExpressions:
-              - key: hub.jupyter.org/node-purpose
-                operator: In
-                values:
-                - user
+        {{- .Values.affinity | toYaml | nindent 8 -}}
+      {{ end }}
       tolerations: []

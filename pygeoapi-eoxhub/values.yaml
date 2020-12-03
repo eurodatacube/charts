@@ -21,3 +21,13 @@ s3:
 jupyterBaseUrl: "https://edc-jupyter.hub.eox.at"
 
 outputDirectory: "/home/jovyan/job-output"
+
+affinity:
+  nodeAffinity:
+    requiredDuringSchedulingIgnoredDuringExecution:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: hub.jupyter.org/node-purpose
+          operator: In
+          values:
+          - user
