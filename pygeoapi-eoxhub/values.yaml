@@ -9,13 +9,13 @@ extraPvcs: []
   #  mount_path: /home/jovyan/eox
 
 
-defaultImage: "eurodatacube/jupyter-user:0.22.1"
+defaultImage: "527538141574.dkr.ecr.eu-central-1.amazonaws.com/eurodatacube-jupyter-user:0.22.1"
 imagePullSecret: ""
 
 s3:
   enabled: false
   bucketName: ""
-  secretName: "s3-bucket"
+  secretName: "edc-bucket"
   s3Url: "https://s3-eu-central-1.amazonaws.com"
 
 jupyterBaseUrl: "https://edc-jupyter.hub.eox.at"
