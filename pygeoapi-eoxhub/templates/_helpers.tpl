@@ -43,5 +43,5 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{- define "base.ingressUrl" -}}
 {{- if .Values.ingressUrl -}}
     {{- .Values.ingressUrl -}}
-{{- else -}}{{ .Release.Name }}.{{ .Release.Namespace }}.hub.eox.at{{- end -}}
+{{- else -}}pygeoapi-eoxhub.{{ .Release.Namespace }}.hub.eox.at{{- end -}}
 {{- end -}}
