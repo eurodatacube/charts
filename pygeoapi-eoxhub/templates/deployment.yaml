@@ -59,9 +59,48 @@ spec:
             # mount same as actual user pod such that we don't have to translate dirs
             mountPath: /home/jovyan
           {{ end }}
+          {{ if .Values.s3.enabled }}
+          - mountPath: /home/jovyan/s3
+            mountPropagation: HostToContainer
+            name: s3-user-bucket
+          {{ end }}
           {{ range $pvcIndex, $extraPvc := .Values.extraPvcs }}
           - name: extra-{{ $pvcIndex }}
             mountPath: {{ $extraPvc.mount_path }}
+          {{ end }}
+        {{ if .Values.s3.enabled }}
+        - name: s3mounter
+          env:
+          - name: S3FS_ARGS
+            value: -oallow_other
+          - name: AWS_S3_ACCESS_KEY_ID
+            valueFrom:
+              secretKeyRef:
+                key: username
+                name: "{{ .Values.s3.secretName }}"
+          - name: AWS_S3_SECRET_ACCESS_KEY
+            valueFrom:
+              secretKeyRef:
+                key: password
+                name: "{{ .Values.s3.secretName }}"
+          - name: AWS_S3_BUCKET
+            value: "{{ .Values.s3.bucketName }}"
+          - name: AWS_S3_URL
+            value: "{{ .Values.s3.s3Url }}"
+          image: totycro/s3fs:0.5.0-1.86
+          resources:
+            limits:
+              cpu: 100m
+              memory: 128Mi
+            requests:
+              cpu: 50m
+              memory: 32Mi
+          securityContext:
+            privileged: true
+          volumeMounts:
+          - mountPath: /opt/s3fs/bucket
+            mountPropagation: Bidirectional
+            name: s3-user-bucket
           {{ end }}
       volumes:
       - name: pygeoapi-config
@@ -71,6 +110,10 @@ spec:
       - name: user-home
         persistentVolumeClaim:
           claimName: user
+      {{ end }}
+      {{ if .Values.s3.enabled }}
+      - emptyDir: {}
+        name: s3-user-bucket
       {{ end }}
       {{ range $pvcIndex, $extraPvc := .Values.extraPvcs }}
       - name: extra-{{ $pvcIndex }}
