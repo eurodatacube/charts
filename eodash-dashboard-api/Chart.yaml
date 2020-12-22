@@ -1,0 +1,14 @@
+apiVersion: v1
+appVersion: v1.0
+description: eodash-dashboard-api
+icon: https://raw.githubusercontent.com/eurodatacube/charts/master/eodash-dashboard-api/EDC_logo_app.svg?sanitize=true
+keywords:
+- license:null
+- 'license_notes:'
+- 'license_price:'
+- requirement:eoxhub
+maintainers:
+- name: 0c0a0ef4-8d0d-4e70-b002-033c7cbb41fd
+name: eodash-dashboard-api
+sources:
+version: 0.0.1
