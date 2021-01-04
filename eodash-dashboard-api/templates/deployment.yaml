@@ -29,12 +29,18 @@ spec:
               containerPort: 8080
               protocol: TCP
           env:
-          {{- range $name, $value := .Values.env }}
-          {{- if not (empty $value) }}
-            - name: {{ $name | quote }}
-              value: {{ $value | quote }}
-          {{- end }}
-          {{- end }}
+          - name: S3_DIRECTORY
+            value: "{{ .Values.S3_DIRECTORY }}"
+          - name: AWS_ACCESS_KEY_ID
+            valueFrom:
+              secretKeyRef:
+                name: "{{ .Values.S3_BUCKET_SECRET }}"
+                key: username
+          - name: AWS_SECRET_ACCESS_KEY
+            valueFrom:
+              secretKeyRef:
+                name: "{{ .Values.S3_BUCKET_SECRET }}"
+                key: password
           resources:
             limits:
               cpu: "200m"
