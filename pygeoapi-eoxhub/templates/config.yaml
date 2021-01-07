@@ -23,10 +23,7 @@ data:
         # ogc_schemas_location: /opt/schemas.opengis.net
 
         manager:
-            name: pygeoapi.process.manager.kubernetes.KubernetesManager
-            user_uuid: "{{ .Release.Namespace }}"
-            user_email: "{{ .Values.userEmail }}"
-            jobs_in_user_namespace: true
+            name: pygeoapi_kubernetes_papermill.KubernetesManager
 
     logging:
         level: DEBUG
@@ -69,7 +66,7 @@ data:
       execute-notebook:
         type: process
         processor:
-          name: pygeoapi.process.notebook.PapermillNotebookKubernetesProcessor
+          name: pygeoapi_kubernetes_papermill.PapermillNotebookKubernetesProcessor
           default_image: "{{ .Values.defaultImage }}"
           image_pull_secret: "{{ .Values.imagePullSecret }}"
           {{ if .Values.s3.enabled }}
