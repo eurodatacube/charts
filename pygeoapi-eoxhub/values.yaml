@@ -33,3 +33,5 @@ affinity:
           operator: In
           values:
           - user
+
+secrets: []
