@@ -84,3 +84,9 @@ data:
             {{- toYaml .Values.extraPvcs | nindent 10 }}
           {{ end }}
           jupyter_base_url: "{{ .Values.jupyterBaseUrl }}"
+          {{ if empty .Values.secrets }}
+          secrets: []
+          {{ else }}
+          secrets:
+            {{- toYaml .Values.secrets | nindent 10 }}
+          {{ end }}
