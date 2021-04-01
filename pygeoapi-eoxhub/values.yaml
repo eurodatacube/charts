@@ -35,3 +35,8 @@ affinity:
           - user
 
 secrets: []
+
+checkoutGitRepo:
+  enabled: false
+  url: ""
+  secretName: "pygeoapi-git"

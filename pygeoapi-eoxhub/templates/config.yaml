@@ -90,3 +90,8 @@ data:
           secrets:
             {{- toYaml .Values.secrets | nindent 10 }}
           {{ end }}
+          {{ if .Values.checkoutGitRepo.enabled }}
+          checkout_git_repo:
+            url: "{{ .Values.checkoutGitRepo.url }}"
+            secret_name: "{{ .Values.checkoutGitRepo.secretName }}"
+          {{ end }}
