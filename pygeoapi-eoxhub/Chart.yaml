@@ -8,5 +8,5 @@ maintainers:
 - name: 0c0a0ef4-8d0d-4e70-b002-033c7cbb41fd
 name: pygeoapi-eoxhub
 sources:
-version: 0.0.53-chart-2
-appVersion: 0.0.53
+version: 0.0.54
+appVersion: 0.0.54
