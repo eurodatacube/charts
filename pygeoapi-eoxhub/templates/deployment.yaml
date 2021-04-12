@@ -36,7 +36,9 @@ spec:
           {{- end }}
           {{- end }}
           livenessProbe:
-            initialDelaySeconds: 15
+            initialDelaySeconds: 25
+            periodSeconds: 15
+            failureThreshold: 5
             httpGet:
               path: /conformance
               port: 80
