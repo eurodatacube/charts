@@ -35,6 +35,8 @@ spec:
               value: {{ $value | quote }}
           {{- end }}
           {{- end }}
+            - name: WSGI_WORKERS
+              value: "1"
           livenessProbe:
             initialDelaySeconds: 25
             periodSeconds: 15
@@ -49,10 +51,10 @@ spec:
           resources:
             limits:
               cpu: "200m"
-              memory: "800M"
+              memory: "300M"
             requests:
               cpu: "100m"
-              memory: "400M"
+              memory: "150M"
           volumeMounts:
           - name: pygeoapi-config
             mountPath: "/pygeoapi/local.config.yml"
