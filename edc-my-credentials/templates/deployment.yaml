@@ -20,9 +20,10 @@ spec:
         # https://v3.helm.sh/docs/howto/charts_tips_and_tricks/#automatically-roll-deployments
         rollme: {{ randAlphaNum 5 | quote }}
     spec:
+      serviceAccountName: {{ include "base.fullname" . }}
       containers:
         - name: {{ include "base.name" . }}
-          image: eurodatacube/edc-my-credentials:{{.Chart.Version }}
+          image: eurodatacube/edc-my-credentials:{{ .Chart.AppVersion }}
           ports:
             - name: http
               containerPort: 8080
@@ -36,10 +37,10 @@ spec:
           {{- end }}
           resources:
             limits:
-              cpu: "200m"
+              cpu: "100m"
               memory: "250M"
             requests:
-              cpu: "100m"
+              cpu: "50m"
               memory: "50M"
       nodeSelector: {}
       affinity:
