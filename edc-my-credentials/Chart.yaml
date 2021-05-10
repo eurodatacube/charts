@@ -5,8 +5,8 @@ keywords:
 sources:
 - eurodatacube/edc-my-credentials
 
-version: 0.0.9
-appVersion: 0.0.9
+version: 0.0.9-chart-2
+appVersion: 0.0.9-chart-2
 
 maintainers:
   - name: Euro Data Cube Consortium
