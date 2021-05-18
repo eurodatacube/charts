@@ -20,7 +20,7 @@ spec:
         # https://v3.helm.sh/docs/howto/charts_tips_and_tricks/#automatically-roll-deployments
         rollme: {{ randAlphaNum 5 | quote }}
     spec:
-      serviceAccountName: default-elevated
+      serviceAccountName: default
       containers:
         - name: {{ include "base.name" . }}
           image: eurodatacube/edc-my-credentials:{{ .Chart.AppVersion }}
