@@ -1,0 +1,13 @@
+apiVersion: v1
+description: "EDC BYOA Results"
+name: byoa-results
+keywords:
+sources: []
+
+version: 0.0.21
+appVersion: 0.0.21
+
+maintainers:
+  - name: Euro Data Cube Consortium
+    url: https://eurodatacube.com
+icon: "https://raw.githubusercontent.com/eurodatacube/charts/master/byoa-results/EDC_logo_app.svg?sanitize=true"
