@@ -4,8 +4,8 @@ name: byoa-results
 keywords:
 sources: []
 
-version: 0.0.25
-appVersion: 0.0.25
+version: 0.0.26
+appVersion: 0.0.26
 
 maintainers:
   - name: Euro Data Cube Consortium
