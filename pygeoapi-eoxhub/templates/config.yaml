@@ -95,3 +95,4 @@ data:
             url: "{{ .Values.checkoutGitRepo.url }}"
             secret_name: "{{ .Values.checkoutGitRepo.secretName }}"
           {{ end }}
+          log_output: {{ .Values.logOutput }}
