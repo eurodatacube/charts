@@ -96,3 +96,4 @@ data:
             secret_name: "{{ .Values.checkoutGitRepo.secretName }}"
           {{ end }}
           log_output: {{ .Values.logOutput }}
+          node_purpose: {{ .Values.nodePurpose }}
