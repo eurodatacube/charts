@@ -2,8 +2,7 @@
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  # NOTE: this is currently hardcoded in pygeoapi
-  name: pygeoapi-eoxhub-job
+  name: {{ include "base.fullname" . }}
   labels:
 {{ include "base.labels" . | indent 4 }}
 ---

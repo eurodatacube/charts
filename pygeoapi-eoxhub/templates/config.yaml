@@ -97,3 +97,4 @@ data:
           {{ end }}
           log_output: {{ .Values.logOutput }}
           node_purpose: {{ .Values.nodePurpose }}
+          job_service_account: {{ include "base.fullname" . }}
