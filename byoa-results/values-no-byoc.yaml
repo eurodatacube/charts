@@ -1,2 +1,3 @@
 env: []
 byocEnabled: false
+scratchBucketName: "edc-byoa-scratch"

@@ -79,6 +79,8 @@ spec:
               name: "eurodatacube"
               key: "client_secret"
         {{ end }}
+        - name: SCRATCH_BUCKET_NAME
+          value: {{ .Values.scratchBucketName }}
         resources:
           limits:
             cpu: 0.1
