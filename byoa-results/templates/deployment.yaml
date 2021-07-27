@@ -58,6 +58,9 @@ spec:
       - name: watch-result-secrets
         image: 'registry.gitlab.eox.at/esa/dcfs/byoa-results:{{ .Chart.AppVersion }}'
         command: ["tini", "--", "python3", "watch_result_secrets.py"]
+        env:
+        - name: SCRATCH_BUCKET_NAME
+          value: {{ .Values.scratchBucketName }}
         resources:
           limits:
             cpu: 0.1
@@ -70,6 +73,8 @@ spec:
         image: 'registry.gitlab.eox.at/esa/dcfs/byoa-results:{{ .Chart.AppVersion }}'
         command: ["tini", "--", "python3", "watch_sync_jobs.py"]
         env:
+        - name: SCRATCH_BUCKET_NAME
+          value: {{ .Values.scratchBucketName }}
         {{ if .Values.byocEnabled }}
         - name: SH_CLIENT_ID
           valueFrom:
