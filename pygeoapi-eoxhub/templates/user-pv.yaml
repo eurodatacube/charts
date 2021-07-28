@@ -21,6 +21,6 @@ spec:
     server: "{{ .Values.existingNfs.nfsServer }}"
     path: "/{{ .Values.existingNfs.nfsShare }}/users/{{ .Release.Namespace | replace "-" "-2d" }}"
   claimRef:
-    name: user
+    name: user-{{ .Release.Name }}
     namespace: {{ .Release.Namespace }}
 {{ end }}

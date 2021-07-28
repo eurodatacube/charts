@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: user
+  name: user-{{ .Release.Name }}
 spec:
   storageClassName: ""
   accessModes:

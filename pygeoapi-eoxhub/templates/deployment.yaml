@@ -114,7 +114,7 @@ spec:
       {{ if .Values.existingNfs.enabled }}
       - name: user-home
         persistentVolumeClaim:
-          claimName: user
+          claimName: user-{{ .Release.Name }}
       {{ end }}
       {{ if .Values.s3.enabled }}
       - emptyDir: {}

@@ -76,7 +76,7 @@ data:
             s3_url: "{{ .Values.s3.s3Url }}"
           {{ end }}
           output_directory: "{{ .Values.outputDirectory }}"
-          home_volume_claim_name: "{{ if .Values.existingNfs.enabled }}user{{ end }}"
+          home_volume_claim_name: "{{ if .Values.existingNfs.enabled }}user-{{ .Release.Name }}{{ end }}"
           {{ if empty .Values.extraPvcs }}
           extra_pvcs: []
           {{ else }}
