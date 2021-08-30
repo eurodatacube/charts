@@ -63,6 +63,8 @@ spec:
         env:
         - name: SCRATCH_BUCKET_NAME
           value: {{ .Values.scratchBucketName }}
+        - name: MARKETPLACE_API_URL
+          value: "https://api.hub.eox.at"
         resources:
           limits:
             cpu: 0.1
@@ -77,6 +79,8 @@ spec:
         env:
         - name: SCRATCH_BUCKET_NAME
           value: {{ .Values.scratchBucketName }}
+        - name: MARKETPLACE_API_URL
+          value: "https://api.hub.eox.at"
         {{ if .Values.byocEnabled }}
         - name: SH_CLIENT_ID
           valueFrom:
