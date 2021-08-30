@@ -27,6 +27,8 @@ spec:
         env:
         - name: SCRATCH_BUCKET_NAME
           value: {{ .Values.scratchBucketName }}
+        - name: MARKETPLACE_API_URL
+          value: "https://api.hub.eox.at"
         ports:
         - name: http
           containerPort: 8080
