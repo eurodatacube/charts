@@ -1,0 +1,17 @@
+apiVersion: v1
+appVersion: v1.0
+description: test
+icon: https://raw.githubusercontent.com/eurodatacube/charts/master/contributions/2ab08516-38b0-4d62-baec-cc066a1cb737/edc-logo.png?sanitize=true
+keywords:
+- license:null
+- 'license_notes:'
+- 'license_price:'
+- requirement:eurodatacube-geodb
+- requirement:eoxhub
+- tag:test
+maintainers:
+- name: eb7fa88c-36a4-4b5f-959f-c7869d5acda8
+name: 2ab08516-38b0-4d62-baec-cc066a1cb737
+sources:
+- eurodatacube/base-images
+version: '1'
