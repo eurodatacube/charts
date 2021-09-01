@@ -44,3 +44,6 @@ checkoutGitRepo:
   secretName: "pygeoapi-git"
 
 nodePurpose: ""
+
+fargate:
+  allow: false
