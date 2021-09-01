@@ -72,6 +72,9 @@ spec:
           {{ range $pvcIndex, $extraPvc := .Values.extraPvcs }}
           - name: extra-{{ $pvcIndex }}
             mountPath: {{ $extraPvc.mount_path }}
+            {{ if $extraPvc.sub_path }}
+            subPath: {{ $extraPvc.sub_path }}
+            {{ end }}
           {{ end }}
         {{ if .Values.s3.enabled }}
         - name: s3mounter
