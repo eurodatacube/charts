@@ -1,3 +1,4 @@
+{{ if ingressEnabled }}
 {{- $fullName := include "base.fullname" . -}}
 apiVersion: extensions/v1beta1
 kind: Ingress
@@ -26,3 +27,4 @@ spec:
   - hosts:
     - {{ include "base.ingressUrl" . }}
     secretName: wildcard-tls
+{{ endif }}
