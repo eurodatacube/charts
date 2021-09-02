@@ -129,8 +129,8 @@ spec:
           claimName: {{ $extraPvc.claim_name }}
       {{ end }}
       nodeSelector: {}
-      {{- if .Values.affinity }}
+      {{- if .Values.pygeoapi.affinity }}
       affinity:
-        {{- .Values.affinity | toYaml | nindent 8 -}}
+        {{- .Values.pygeoapi.affinity | toYaml | nindent 8 -}}
       {{ end }}
       tolerations: []

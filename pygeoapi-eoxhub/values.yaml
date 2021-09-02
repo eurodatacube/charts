@@ -26,17 +26,18 @@ ingressEnabled: true
 
 outputDirectory: "/home/jovyan/job-output"
 
-# NOTE: this means the pygeoapi server pod, not the job pod
-# TODO: rename
-affinity:
-  nodeAffinity:
-    requiredDuringSchedulingIgnoredDuringExecution:
-      nodeSelectorTerms:
-      - matchExpressions:
-        - key: hub.jupyter.org/node-purpose
-          operator: In
-          values:
-          - user
+pygeoapi:
+  # This block concerns the pygeoapi server deployment itself
+  # Other options are intended to affect the job pods
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: hub.jupyter.org/node-purpose
+            operator: In
+            values:
+            - user
 
 secrets: []
 
