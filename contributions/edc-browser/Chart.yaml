@@ -1,7 +1,7 @@
 apiVersion: v1
 appVersion: v1.0
 description: EDC Browser
-icon: https://raw.githubusercontent.com/eurodatacube/charts/master/contributions/7f3fa7e9-17be-40b4-8a19-e6f92be372e3/icon-512.png?sanitize=true
+icon: https://raw.githubusercontent.com/eurodatacube/charts/master/contributions/edc-browser/icon-512.png?sanitize=true
 keywords:
 - license:null
 - 'license_notes:'
@@ -14,7 +14,7 @@ keywords:
 - tag:View Service
 maintainers:
 - name: 58854273-74e1-40a0-a2f3-27a90871a4aa
-name: 7f3fa7e9-17be-40b4-8a19-e6f92be372e3
+name: edc-browser
 sources:
 - eurodatacube/edc-browser
-version: 0.0.3
+version: 0.0.0-dev-0
