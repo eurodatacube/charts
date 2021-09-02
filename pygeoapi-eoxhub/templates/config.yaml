@@ -97,5 +97,7 @@ data:
           {{ end }}
           log_output: {{ .Values.logOutput }}
           node_purpose: {{ .Values.nodePurpose }}
+          tolerations:
+{{ toYaml .Values.tolerations  | indent 10}}
           job_service_account: {{ include "base.fullname" . }}-job
           allow_fargate: {{ .Values.fargate.allow }}

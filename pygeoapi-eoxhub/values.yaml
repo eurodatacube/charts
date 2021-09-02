@@ -26,6 +26,8 @@ ingressEnabled: true
 
 outputDirectory: "/home/jovyan/job-output"
 
+# NOTE: this means the pygeoapi server pod, not the job pod
+# TODO: rename
 affinity:
   nodeAffinity:
     requiredDuringSchedulingIgnoredDuringExecution:
@@ -43,7 +45,9 @@ checkoutGitRepo:
   url: ""
   secretName: "pygeoapi-git"
 
+# NOTE: this is about the job pod, not the pygeoapi server job
 nodePurpose: ""
+tolerations: [] # [{"key": "hub.eox.at/processing", "operator": "Exists", "effect": "NoSchedule"}]
 
 fargate:
   allow: false
