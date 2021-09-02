@@ -87,6 +87,7 @@ spec:
             requests:
               cpu: "100m"
               memory: "400M"
+      enableServiceLinks: false
       nodeSelector: {}
       affinity:
         nodeAffinity:
