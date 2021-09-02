@@ -17,4 +17,4 @@ maintainers:
 name: edc-browser
 sources:
 - eurodatacube/edc-browser
-version: 0.0.0-dev-0
+version: v0.0.3
