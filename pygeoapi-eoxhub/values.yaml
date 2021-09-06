@@ -48,7 +48,8 @@ checkoutGitRepo:
 
 # NOTE: this is about the job pod, not the pygeoapi server job
 nodePurpose: ""
-tolerations: [] # [{"key": "hub.eox.at/processing", "operator": "Exists", "effect": "NoSchedule"}]
+tolerations: []
+# tolerations: [{"key": "hub.eox.at/processing", "operator": "Exists", "effect": "NoSchedule"}]
 
 fargate:
   allow: false

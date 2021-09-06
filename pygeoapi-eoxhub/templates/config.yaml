@@ -97,7 +97,11 @@ data:
           {{ end }}
           log_output: {{ .Values.logOutput }}
           node_purpose: {{ .Values.nodePurpose }}
+          {{ if empty .Values.tolerations }}
+          tolerations: []
+          {{ else }}
           tolerations:
 {{ toYaml .Values.tolerations  | indent 10}}
+          {{ end }}
           job_service_account: {{ include "base.fullname" . }}-job
           allow_fargate: {{ .Values.fargate.allow }}
