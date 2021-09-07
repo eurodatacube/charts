@@ -28,6 +28,9 @@ spec:
             - name: http
               containerPort: 80
               protocol: TCP
+          envFrom:
+          - secretRef:
+              name: edc-browser
           env:
             - name: SH_CLIENT_ID
               valueFrom:
