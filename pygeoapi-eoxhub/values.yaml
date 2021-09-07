@@ -40,6 +40,7 @@ pygeoapi:
             - user
 
 secrets: []
+autoMountSecrets: False
 
 checkoutGitRepo:
   enabled: false

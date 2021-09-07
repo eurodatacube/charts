@@ -90,6 +90,7 @@ data:
           secrets:
             {{- toYaml .Values.secrets | nindent 10 }}
           {{ end }}
+          auto_mount_secrets: {{ .Values.autoMountSecrets }}
           {{ if .Values.checkoutGitRepo.enabled }}
           checkout_git_repo:
             url: "{{ .Values.checkoutGitRepo.url }}"

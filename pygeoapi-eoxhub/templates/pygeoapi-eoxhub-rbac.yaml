@@ -38,3 +38,4 @@ rules:
     resources:
       - pods
       - events
+      - secrets
