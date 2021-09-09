@@ -39,3 +39,7 @@ rules:
       - pods
       - events
       - secrets
+  - apiGroups: [""]
+    verbs: ["delete"]
+    resources:
+      - pods
