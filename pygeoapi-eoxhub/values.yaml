@@ -10,6 +10,7 @@ extraPvcs: []
 
 
 defaultImage: "527538141574.dkr.ecr.eu-central-1.amazonaws.com/eurodatacube-jupyter-user:0.24.5"
+allowedImagesRegex: ""
 imagePullSecret: ""
 logOutput: false
 

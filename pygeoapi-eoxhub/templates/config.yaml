@@ -68,6 +68,7 @@ data:
         processor:
           name: pygeoapi_kubernetes_papermill.PapermillNotebookKubernetesProcessor
           default_image: "{{ .Values.defaultImage }}"
+          allowed_images_regex: "{{ .Values.allowedImagesRegex }}"
           image_pull_secret: "{{ .Values.imagePullSecret }}"
           {{ if .Values.s3.enabled }}
           s3:
