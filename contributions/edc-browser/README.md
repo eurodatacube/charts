@@ -14,5 +14,6 @@ It also enables users to easily order algorithm processing by providing an inter
 ## Features
 - select algorithm, set its parameters and order its execution
 - display algorithm results
+- order commercial data
 - display data from public collections
 - display data from user-owned collections
