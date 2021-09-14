@@ -56,11 +56,11 @@ data:
             postalcode: 1090
             country: Österreich / Austria
             phone: +43 664 6207655
-            fax: "-"
-            email: hub@eox.a
+            fax: null
+            email: hub@eox.at
             url: https://eurodatacube.com/support
-            hours: Mo-Fr 08:00-17:00
-            instructions: During office hours on Austrian working days.
+            hours: null
+            instructions: null
             role: pointOfContact
 
     resources:
