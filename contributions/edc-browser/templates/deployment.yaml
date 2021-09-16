@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
         - name: {{ include "base.name" . }}
-          image: eurodatacube/edc-browser:{{ .Chart.Version }}
+          image: eurodatacube/edc-browser:{{ .Chart.AppVersion }}
           ports:
             - name: http
               containerPort: 80
