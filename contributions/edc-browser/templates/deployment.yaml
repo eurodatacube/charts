@@ -23,29 +23,26 @@ spec:
     spec:
       containers:
         - name: {{ include "base.name" . }}
-          image: eurodatacube/edc-browser:{{ .Chart.AppVersion }}
+          image: eurodatacube/edc-browser:{{ .Chart.Version }}
           ports:
             - name: http
-              containerPort: 80
+              containerPort: 5000
               protocol: TCP
-          envFrom:
-          - secretRef:
-              name: edc-browser
           env:
             - name: SH_CLIENT_ID
               valueFrom:
                 secretKeyRef:
-                  name: eurodatacube-default
+                  name: eurodatacube-{{ include "base.name" . }}
                   key: client_id
             - name: SH_CLIENT_SECRET
               valueFrom:
                 secretKeyRef:
-                  name: eurodatacube-default
+                  name: eurodatacube-{{ include "base.name" . }}
                   key: client_secret
             - name: SH_INSTANCE_ID
               valueFrom:
                 secretKeyRef:
-                  name: eurodatacube-default
+                  name: eurodatacube-{{ include "base.name" . }}
                   key: instance_id
             - name: GEODB_AUTH_CLIENT_ID
               valueFrom:
@@ -90,7 +87,6 @@ spec:
             requests:
               cpu: "100m"
               memory: "400M"
-      enableServiceLinks: false
       nodeSelector: {}
       affinity:
         nodeAffinity:
