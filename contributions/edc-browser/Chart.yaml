@@ -1,13 +1,13 @@
 apiVersion: v1
-appVersion: v0.0.7
+appVersion: v1.0
 description: EDC Browser
 icon: https://raw.githubusercontent.com/eurodatacube/charts/master/contributions/edc-browser/icon-512.png?sanitize=true
 keywords:
 - license:null
 - 'license_notes:'
 - 'license_price:'
-- requirement:eoxhub
 - requirement:eurodatacube
+- requirement:eoxhub
 - requirement:eurodatacube-geodb
 - tag:GeoDB
 - tag:Sentinel Hub
@@ -17,4 +17,4 @@ maintainers:
 name: edc-browser
 sources:
 - eurodatacube/edc-browser
-version: v0.0.7
+version: 1.0.0
