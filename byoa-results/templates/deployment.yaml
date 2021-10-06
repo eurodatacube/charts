@@ -68,7 +68,7 @@ spec:
         {{ if .Values.geodbEnabled }}
         envFrom:
         - secretRef:
-            name: "eurodatacube-geodb-default"
+            name: "eurodatacube-geodb-{{ include "base.name" . }}"
         {{ end }}
         resources:
           limits:
@@ -90,12 +90,12 @@ spec:
         - name: SH_CLIENT_ID
           valueFrom:
             secretKeyRef:
-              name: "eurodatacube"
+              name: eurodatacube-{{ include "base.name" . }}
               key: "client_id"
         - name: SH_CLIENT_SECRET
           valueFrom:
             secretKeyRef:
-              name: "eurodatacube"
+              name: eurodatacube-{{ include "base.name" . }}
               key: "client_secret"
         {{ end }}
         resources:
