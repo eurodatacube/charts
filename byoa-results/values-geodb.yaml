@@ -1,4 +1,0 @@
-env: []
-byocEnabled: true
-geodbEnabled: true
-scratchBucketName: "edc-byoa-scratch"

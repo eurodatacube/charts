@@ -1,4 +1,2 @@
 env: []
-byocEnabled: true
-geodbEnabled: false
 scratchBucketName: "edc-byoa-scratch"

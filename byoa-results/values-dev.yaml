@@ -1,3 +1,2 @@
 env: []
-byocEnabled: true
 scratchBucketName: "edc-dev-byoa-scratch"
