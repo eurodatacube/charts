@@ -51,10 +51,10 @@ spec:
           resources:
             limits:
               cpu: "200m"
-              memory: "300M"
+              memory: "300Mi"
             requests:
               cpu: "100m"
-              memory: "150M"
+              memory: "150Mi"
           volumeMounts:
           - name: pygeoapi-config
             mountPath: "/pygeoapi/local.config.yml"
