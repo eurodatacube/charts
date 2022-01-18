@@ -5,7 +5,7 @@ geoDB).
 
 It allows users to easily order algorithm processing by providing an interface to select algorithms and set parameters for them. While the ordering is completed in EDC Marketplace, users can use the EDC Browser to view the algorithm results once they are available. In addition to algorithms, users can also search and order commercial data using the graphical user interface.
 
-![14.png](http://cockpit.hub.eox.at/storage/uploads/2021/09/26/6150722b19c4414.png)
+![14.png](http://cockpit.hub.eox.at/storage/uploads/2021/11/15/619236d9eb44114.png)
 
 ## Data
 - public EDC collections
