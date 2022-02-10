@@ -1,0 +1,70 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "base.fullname" . }}
+  labels:
+{{ include "base.labels" . | indent 4 }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ include "base.name" . }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: {{ include "base.name" . }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+      annotations:
+        # force k8s to restart pod to apply config changes
+        # https://v3.helm.sh/docs/howto/charts_tips_and_tricks/#automatically-roll-deployments
+        rollme: {{ randAlphaNum 5 | quote }}
+    spec:
+      containers:
+        - name: {{ include "base.name" . }}
+          image: eurodatacube/953fe80c-1f36-4636-959a-3874bab59798:{{ .Chart.Version }}
+          ports:
+            - name: http
+              containerPort: 5000
+              protocol: TCP
+          env:
+            - name: SH_CLIENT_ID
+              valueFrom:
+                secretKeyRef:
+                  name: eurodatacube-{{ include "base.name" . }}
+                  key: client_id
+            - name: SH_CLIENT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: eurodatacube-{{ include "base.name" . }}
+                  key: client_secret
+            - name: SH_INSTANCE_ID
+              valueFrom:
+                secretKeyRef:
+                  name: eurodatacube-{{ include "base.name" . }}
+                  key: instance_id
+          {{- range $name, $value := .Values.env }}
+          {{- if not (empty $value) }}
+            - name: {{ $name | quote }}
+              value: {{ $value | quote }}
+          {{- end }}
+          {{- end }}
+          resources:
+            limits:
+              cpu: "200m"
+              memory: "800M"
+            requests:
+              cpu: "100m"
+              memory: "400M"
+      nodeSelector: {}
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: hub.jupyter.org/node-purpose
+                operator: In
+                values:
+                - user
+      tolerations: []
