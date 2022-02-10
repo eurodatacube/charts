@@ -1,0 +1,20 @@
+apiVersion: v1
+appVersion: v1.0
+description: S1 CARD4L Tool
+icon: https://raw.githubusercontent.com/eurodatacube/charts/master/contributions/953fe80c-1f36-4636-959a-3874bab59798/sentinel_hub_logo_big.png?sanitize=true
+keywords:
+- license:null
+- 'license_notes:'
+- 'license_price:'
+- requirement:eurodatacube
+- requirement:eoxhub
+- tag:Analysis-Ready Data
+- tag:Sentinel Hub
+- tag:Mass Processing
+- tag:Download Service
+maintainers:
+- name: 7d3e7b4e-3b5f-4c33-a31b-e7ce95c95a8f
+name: 953fe80c-1f36-4636-959a-3874bab59798
+sources:
+- 'null'
+version: 0.0.1
