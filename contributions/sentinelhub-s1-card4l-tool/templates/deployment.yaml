@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
         - name: {{ include "base.name" . }}
-          image: eurodatacube/953fe80c-1f36-4636-959a-3874bab59798:{{ .Chart.Version }}
+          image: eurodatacube/sentinelhub-s1-card4l-tool:{{ .Chart.Version }}
           ports:
             - name: http
               containerPort: 5000
@@ -50,6 +50,13 @@ spec:
               value: {{ $value | quote }}
           {{- end }}
           {{- end }}
+          volumeMounts:
+          - name: "nginx-config"
+            mountPath: "/docker-entrypoint.d/15-export-dns-server-ip.sh"
+            subPath: "15-export-dns-server-ip.sh"
+          - name: "nginx-config"
+            mountPath: "/tmp/nginx.conf.template"
+            subPath: "nginx.conf.template"
           resources:
             limits:
               cpu: "200m"
@@ -57,6 +64,11 @@ spec:
             requests:
               cpu: "100m"
               memory: "400M"
+      volumes:
+      - name: nginx-config
+        configMap:
+          name: {{ include "base.fullname" . }}
+          defaultMode: 0777
       nodeSelector: {}
       affinity:
         nodeAffinity:
