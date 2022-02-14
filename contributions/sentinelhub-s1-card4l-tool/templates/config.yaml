@@ -1,0 +1,35 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: {{ include "base.fullname" . }}
+  labels:
+{{ include "base.labels" . | indent 4 }}
+data:
+  15-export-dns-server-ip.sh: |
+    # stupid workaround to be able to set dns server
+    export DNS_SERVER=$(cat /etc/resolv.conf |grep -i '^nameserver'|head -n1|cut -d ' ' -f2)
+    mkdir /etc/nginx/templates
+    envsubst '${DNS_SERVER}' < /tmp/nginx.conf.template > /etc/nginx/templates/nginx.conf.template
+  nginx.conf.template: |
+
+    server {
+
+        listen 5000;
+
+        # need to specify resolve to be able to resolve variables
+        resolver "${DNS_SERVER}";
+
+        location /token_sentinel_hub {
+            proxy_set_header "X-SH-CLIENT-ID" "${SH_CLIENT_ID}";
+            proxy_set_header "X-SH-CLIENT-SECRET" "${SH_CLIENT_SECRET}";
+
+            # pass as var to force frequent re-resolution (otherwise IP changes are not detected)
+            set $backend https://sentinelhub-token-creator.hub.eox.at/token;
+            proxy_pass $backend;
+        }
+
+        location / {
+            root /usr/share/nginx/html;
+        }
+
+    }
