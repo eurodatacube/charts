@@ -19,6 +19,7 @@ spec:
         # force k8s to restart pod to apply config changes
         # https://v3.helm.sh/docs/howto/charts_tips_and_tricks/#automatically-roll-deployments
         rollme: {{ randAlphaNum 5 | quote }}
+        prometheus.io/scrape: "true"
     spec:
       serviceAccountName: {{ include "base.fullname" . }}
       containers:
