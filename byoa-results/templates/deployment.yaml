@@ -20,6 +20,7 @@ spec:
         # https://v3.helm.sh/docs/howto/charts_tips_and_tricks/#automatically-roll-deployments
         rollme: {{ randAlphaNum 5 | quote }}
         prometheus.io/scrape: "true"
+        prometheus.io/port: "8080"
     spec:
       serviceAccountName: {{ include "base.fullname" . }}
       containers:
