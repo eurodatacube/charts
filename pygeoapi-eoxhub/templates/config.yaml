@@ -99,7 +99,8 @@ data:
             secret_name: "{{ .Values.checkoutGitRepo.secretName }}"
           {{ end }}
           log_output: {{ .Values.logOutput }}
-          node_purpose: {{ .Values.nodePurpose }}
+          default_node_purpose: {{ .Values.defaultNodePurpose }}
+          allowed_node_purposes_regex: {{ .Values.allowedNodePurposesRegex }}
           {{ if empty .Values.tolerations }}
           tolerations: []
           {{ else }}

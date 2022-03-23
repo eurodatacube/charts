@@ -49,7 +49,8 @@ checkoutGitRepo:
   secretName: "pygeoapi-git"
 
 # NOTE: this is about the job pod, not the pygeoapi server job
-nodePurpose: ""
+defaultNodePurpose: "c1"
+allowedNodePurposesRegex: ""
 tolerations: []
 # tolerations: [{"key": "hub.eox.at/processing", "operator": "Exists", "effect": "NoSchedule"}]
 
