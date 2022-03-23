@@ -19,10 +19,13 @@ spec:
   - host: {{ include "base.ingressUrl" . }}
     http:
       paths:
-      - backend:
-          serviceName: {{ $fullName }}
-          servicePort: http
-        path: /
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: {{ $fullName }}
+            port:
+              name: http
   tls:
   - hosts:
     - {{ include "base.ingressUrl" . }}
