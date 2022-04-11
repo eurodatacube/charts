@@ -1,7 +1,7 @@
 apiVersion: v1
 appVersion: v1.0
 description: EO4Alps Snow Browser
-icon: https://raw.githubusercontent.com/eurodatacube/charts/master/contributions/30c9bf59-b11f-40df-aad7-4c3581d22156/snow_azzurro.svg?sanitize=true
+icon: https://raw.githubusercontent.com/eurodatacube/charts/master/contributions/eo4alps-snow-app/snow_azzurro.svg?sanitize=true
 keywords:
 - license:null
 - 'license_notes:'
@@ -12,7 +12,7 @@ keywords:
 - tag:Download Service
 maintainers:
 - name: 1faa6041-02f5-4205-ae26-48fc3bc3b966
-name: 30c9bf59-b11f-40df-aad7-4c3581d22156
+name: eo4alps-snow-app
 sources:
 - MobyGIS-srl/EO4Alps-Snow-App
-version: 0.0.1
+version: 0.2
