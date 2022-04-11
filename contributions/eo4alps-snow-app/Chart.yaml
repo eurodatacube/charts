@@ -7,7 +7,6 @@ keywords:
 - 'license_notes:'
 - 'license_price:'
 - requirement:eoxhub
-- requirement:eurodatacube
 - tag:Sentinel Hub
 - tag:Download Service
 maintainers:
@@ -15,4 +14,4 @@ maintainers:
 name: eo4alps-snow-app
 sources:
 - MobyGIS-srl/EO4Alps-Snow-App
-version: 0.2
+version: 0.0.0-latest
