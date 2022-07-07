@@ -1,5 +1,5 @@
 {{- $fullName := include "base.fullname" . -}}
-apiVersion: networking.k8s.io/v1
+apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: {{ $fullName }}
@@ -7,22 +7,18 @@ metadata:
 {{ include "base.labels" . | indent 4 }}
   annotations:
     kubernetes.io/ingress.class: nginx
-    nginx.ingress.kubernetes.io/upstream-vhost: snow-app-gte2s.hub.eox.at
-    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: '600'
     nginx.ingress.kubernetes.io/enable-cors: 'true'
 spec:
   rules:
-    - host: {{ .Release.Name }}.{{ .Release.Namespace }}.hub.eox.at
-      http:
-        paths:
-          - backend:
-              service:
-                name: {{ $fullName }}
-                port:
-                    number: 443
-            path: /
-            pathType: ImplementationSpecific
+  - host: {{ .Release.Name }}.{{ .Release.Namespace }}.hub.eox.at
+    http:
+      paths:
+      - backend:
+          serviceName: {{ $fullName }}
+          servicePort: http
+        path: /
   tls:
-    - hosts:
-        - {{ .Release.Name }}.{{ .Release.Namespace }}.hub.eox.at
-      secretName: wildcard-tls
+  - hosts:
+    - {{ .Release.Name }}.{{ .Release.Namespace }}.hub.eox.at
+    secretName: wildcard-tls
