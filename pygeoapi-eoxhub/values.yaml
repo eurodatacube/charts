@@ -39,6 +39,7 @@ pygeoapi:
             operator: In
             values:
             - user
+  logLevel: INFO  # "DEBUG" for more verbosity
 
 secrets: []
 autoMountSecrets: False
