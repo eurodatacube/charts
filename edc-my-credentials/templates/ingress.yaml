@@ -18,9 +18,12 @@ spec:
     http:
       paths:
       - backend:
-          serviceName: {{ $fullName }}
-          servicePort: http
+          service:
+            name: {{ $fullName }}
+            port:
+              name: http
         path: /
+        pathType: ImplementationSpecific
   tls:
   - hosts:
     - {{ .Release.Name }}.{{ .Release.Namespace }}.hub.eox.at
