@@ -15,7 +15,9 @@ data:
             proxy_set_header "X-SH-CLIENT-ID" "${SH_CLIENT_ID}";
             proxy_set_header "X-SH-CLIENT-SECRET" "${SH_CLIENT_SECRET}";
 
-            proxy_pass https://sentinelhub-token-creator.hub.eox.at/token;
+            # pass as var to force frequent re-resolution (otherwise IP changes are not detected)
+            set $backend https://sentinelhub-token-creator.hub.eox.at/token;
+            proxy_pass $backend;
         }
 
         location / {
