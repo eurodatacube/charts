@@ -23,14 +23,11 @@ spec:
     spec:
       containers:
         - name: {{ include "base.name" . }}
-          image: eurodatacube/edc-browser:{{ .Chart.AppVersion }}
+          image: eurodatacube/edc-browser:{{ .Chart.Version }}
           ports:
             - name: http
-              containerPort: 80
+              containerPort: 5000
               protocol: TCP
-          envFrom:
-          - secretRef:
-              name: edc-browser
           env:
             - name: SH_CLIENT_ID
               valueFrom:
@@ -50,32 +47,32 @@ spec:
             - name: GEODB_AUTH_CLIENT_ID
               valueFrom:
                 secretKeyRef:
-                  name: eurodatacube-geodb-{{ include "base.name" . }}
+                  name: eurodatacube-geodb-default
                   key: auth_client_id
             - name: GEODB_AUTH_CLIENT_SECRET
               valueFrom:
                 secretKeyRef:
-                  name: eurodatacube-geodb-{{ include "base.name" . }}
+                  name: eurodatacube-geodb-default
                   key: auth_client_secret
             - name: GEODB_AUTH_AUD
               valueFrom:
                 secretKeyRef:
-                  name: eurodatacube-geodb-{{ include "base.name" . }}
+                  name: eurodatacube-geodb-default
                   key: auth_aud
             - name: GEODB_AUTH_DOMAIN
               valueFrom:
                 secretKeyRef:
-                  name: eurodatacube-geodb-{{ include "base.name" . }}
+                  name: eurodatacube-geodb-default
                   key: auth_domain
             - name: GEODB_API_SERVER_PORT
               valueFrom:
                 secretKeyRef:
-                  name: eurodatacube-geodb-{{ include "base.name" . }}
+                  name: eurodatacube-geodb-default
                   key: api_server_port
             - name: GEODB_API_SERVER_URL
               valueFrom:
                 secretKeyRef:
-                  name: eurodatacube-geodb-{{ include "base.name" . }}
+                  name: eurodatacube-geodb-default
                   key: api_server_url
           {{- range $name, $value := .Values.env }}
           {{- if not (empty $value) }}
@@ -90,7 +87,6 @@ spec:
             requests:
               cpu: "100m"
               memory: "400M"
-      enableServiceLinks: false
       nodeSelector: {}
       affinity:
         nodeAffinity:
