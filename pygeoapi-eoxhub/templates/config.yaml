@@ -109,3 +109,4 @@ data:
           {{ end }}
           job_service_account: {{ include "base.fullname" . }}-job
           allow_fargate: {{ .Values.fargate.allow }}
+          node_purpose_label_key: {{ .Values.nodePurposeLabelKey }}

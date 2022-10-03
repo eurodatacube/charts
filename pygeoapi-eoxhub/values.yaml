@@ -50,6 +50,7 @@ checkoutGitRepo:
   secretName: "pygeoapi-git"
 
 # NOTE: this is about the job pod, not the pygeoapi server job
+nodePurposeLabelKey: "hub.eox.at/node-purpose"
 defaultNodePurpose: "c1"
 allowedNodePurposesRegex: ""
 tolerations: []
