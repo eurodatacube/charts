@@ -110,3 +110,6 @@ data:
           job_service_account: {{ include "base.fullname" . }}-job
           allow_fargate: {{ .Values.fargate.allow }}
           node_purpose_label_key: {{ .Values.nodePurposeLabelKey }}
+          run_as_user: {{ .Values.job.runAsUser }}
+          run_as_group: {{ .Values.job.runAsGroup }}
+          custom_job_setup_script: {{ .Values.job.customJobSetupScript | quote }}

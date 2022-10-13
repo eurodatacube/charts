@@ -56,5 +56,12 @@ allowedNodePurposesRegex: ""
 tolerations: []
 # tolerations: [{"key": "hub.eox.at/processing", "operator": "Exists", "effect": "NoSchedule"}]
 
+job:
+  # TODO: move other global values to job (breaking change)
+  runAsUser: null
+  runAsGroup: null
+  #customJobSetupScript: null
+  customJobSetupScript: "asdf\"basdf"
+
 fargate:
   allow: false
