@@ -60,8 +60,7 @@ job:
   # TODO: move other global values to job (breaking change)
   runAsUser: null
   runAsGroup: null
-  #customJobSetupScript: null
-  customJobSetupScript: "asdf\"basdf"
+  customJobSetupScript: null
 
 fargate:
   allow: false
