@@ -15,8 +15,10 @@ spec:
     http:
       paths:
       - backend:
-          serviceName: {{ $fullName }}
-          servicePort: http
+          service:
+            name: {{ $fullName }}
+            port:
+                name: http
         path: /
   {{ if ne .Release.Name "byoa-results" }}
   # We generate links to this subdomain, the app must be available here
@@ -24,8 +26,10 @@ spec:
     http:
       paths:
       - backend:
-          serviceName: {{ $fullName }}
-          servicePort: http
+          service:
+            name: {{ $fullName }}
+            port:
+                name: http
         path: /
   {{ end }}
   tls:

@@ -16,8 +16,10 @@ spec:
       http:
         paths:
           - backend:
-              serviceName: {{ $fullName }}
-              servicePort: 443
+              service:
+                name: {{ $fullName }}
+                port:
+                    number: 443
             path: /
   tls:
     - hosts:
