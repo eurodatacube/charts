@@ -1,7 +1,7 @@
 apiVersion: v1
 appVersion: v1.0
 description: EO4Alps Snow Browser
-icon: https://raw.githubusercontent.com/eurodatacube/charts/master/contributions/eo4alps-snow-app/snow_azzurro.svg?sanitize=true
+icon: https://raw.githubusercontent.com/eurodatacube/charts/master/edc/eo4alps-snow-app/snow_azzurro.svg?sanitize=true
 keywords:
 - license:null
 - 'license_notes:'

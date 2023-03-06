@@ -12,4 +12,4 @@ sources:
 maintainers:
   - name: Euro Data Cube Consortium
     url: https://eurodatacube.com
-icon: "https://raw.githubusercontent.com/eurodatacube/charts/master/developer-sandbox/EDC_logo_app.svg?sanitize=true"
+icon: "https://raw.githubusercontent.com/eurodatacube/charts/master/edc/developer-sandbox/EDC_logo_app.svg?sanitize=true"
