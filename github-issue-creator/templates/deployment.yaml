@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
         - name: {{ include "base.name" . }}
-          image: eurodatacube/eodash-issues:{{ .Chart.Version }}
+          image: eurodatacube/eodash-issues:{{ .Chart.AppVersion }}
           ports:
             - name: http
               containerPort: 5000
