@@ -2,7 +2,7 @@
 
 set -eux -o pipefail
 
-CHART=$1
+CHART=edc/$1
 
 NEW_VERSION=$2
 NEW_APP_VERSION=$3

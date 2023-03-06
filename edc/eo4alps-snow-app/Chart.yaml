@@ -14,4 +14,4 @@ maintainers:
 name: eo4alps-snow-app
 sources:
 - MobyGIS-srl/EO4Alps-Snow-App
-version: 0.0.0-latest
+version: 0.0.0-latest-chart-2
