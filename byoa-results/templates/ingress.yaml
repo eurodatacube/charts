@@ -20,6 +20,7 @@ spec:
             port:
                 name: http
         path: /
+        pathType: ImplementationSpecific
   {{ if ne .Release.Name "byoa-results" }}
   # We generate links to this subdomain, the app must be available here
   - host: byoa-results.{{ .Release.Namespace }}.hub.eox.at
@@ -31,6 +32,7 @@ spec:
             port:
                 name: http
         path: /
+        pathType: ImplementationSpecific
   {{ end }}
   tls:
   - hosts:

@@ -20,6 +20,7 @@ spec:
             port:
                 name: http
         path: /
+        pathType: ImplementationSpecific
   tls:
   - hosts:
     - {{ .Release.Name }}.{{ .Release.Namespace }}.hub.eox.at
