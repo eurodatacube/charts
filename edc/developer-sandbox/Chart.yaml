@@ -2,7 +2,7 @@ apiVersion: v1
 appVersion: v1.0
 description: "EDC Developer Sandbox"
 name: developer-sandbox
-version: 0.0.1-chart-2
+version: 0.0.1-chart-3
 keywords:
 - license:Free
 - requirement:eurodatacube

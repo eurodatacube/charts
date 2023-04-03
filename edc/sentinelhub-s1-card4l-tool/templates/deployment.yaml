@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
         - name: {{ include "base.name" . }}
-          image: eurodatacube/sentinelhub-s1-card4l-tool:{{ .Chart.Version }}
+          image: eurodatacube/sentinelhub-s1-card4l-tool:{{ .Chart.AppVersion }}
           ports:
             - name: http
               containerPort: 5000

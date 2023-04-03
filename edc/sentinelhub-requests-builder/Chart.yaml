@@ -1,9 +1,9 @@
 apiVersion: v1
-appVersion: v1.0
+appVersion: v1.1.10
 icon: https://raw.githubusercontent.com/eurodatacube/charts/master/edc/sentinelhub-requests-builder/symbol-new.svg?sanitize=true
 description: "Requests Builder"
 name: sentinelhub-requests-builder
-version: v1.1.10-chart-2
+version: v1.1.10-chart-3
 keywords:
 - license:Free
 - requirement:eurodatacube

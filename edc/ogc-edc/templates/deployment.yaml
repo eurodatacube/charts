@@ -26,7 +26,7 @@ spec:
     {{- end }}
       containers:
         - name: {{ include "base.name" . }}
-          image: eurodatacube/ogc-edc:{{ .Chart.Version }}
+          image: eurodatacube/ogc-edc:{{ .Chart.AppVersion }}
           ports:
             - name: http
               containerPort: 5000

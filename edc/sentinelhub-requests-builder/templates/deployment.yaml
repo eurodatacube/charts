@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: {{ include "base.name" . }}
-          image: eurodatacube/requests-builder:{{ .Chart.Version }}
+          image: eurodatacube/requests-builder:{{ .Chart.AppVersion }}
           ports:
             - name: http
               containerPort: 5000
