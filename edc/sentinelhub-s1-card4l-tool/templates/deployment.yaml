@@ -32,17 +32,17 @@ spec:
             - name: SH_CLIENT_ID
               valueFrom:
                 secretKeyRef:
-                  name: eurodatacube-{{ include "base.name" . }}
+                  name: eurodatacube-default
                   key: client_id
             - name: SH_CLIENT_SECRET
               valueFrom:
                 secretKeyRef:
-                  name: eurodatacube-{{ include "base.name" . }}
+                  name: eurodatacube-default
                   key: client_secret
             - name: SH_INSTANCE_ID
               valueFrom:
                 secretKeyRef:
-                  name: eurodatacube-{{ include "base.name" . }}
+                  name: eurodatacube-default
                   key: instance_id
           {{- range $name, $value := .Values.env }}
           {{- if not (empty $value) }}

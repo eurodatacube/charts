@@ -35,37 +35,37 @@ spec:
             - name: DB_HOST
               valueFrom:
                 secretKeyRef:
-                  name: eurodatacube-geodb-{{ include "base.name" . }}
+                  name: eurodatacube-geodb-default
                   key: db_host
             - name: DB_DATABASE
               valueFrom:
                 secretKeyRef:
-                  name: eurodatacube-geodb-{{ include "base.name" . }}
+                  name: eurodatacube-geodb-default
                   key: db_database
             - name: DB_PORT
               valueFrom:
                 secretKeyRef:
-                  name: eurodatacube-geodb-{{ include "base.name" . }}
+                  name: eurodatacube-geodb-default
                   key: db_port
             - name: DB_USER
               valueFrom:
                 secretKeyRef:
-                  name: eurodatacube-geodb-{{ include "base.name" . }}
+                  name: eurodatacube-geodb-default
                   key: db_user
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: eurodatacube-geodb-{{ include "base.name" . }}
+                  name: eurodatacube-geodb-default
                   key: db_password
             - name: SH_CLIENT_ID
               valueFrom:
                 secretKeyRef:
-                  name: eurodatacube-{{ include "base.name" . }}
+                  name: eurodatacube-default
                   key: client_id
             - name: SH_CLIENT_SECRET
               valueFrom:
                 secretKeyRef:
-                  name: eurodatacube-{{ include "base.name" . }}
+                  name: eurodatacube-default
                   key: client_secret
           {{- range $name, $value := .Values.env }}
           {{- if not (empty $value) }}
