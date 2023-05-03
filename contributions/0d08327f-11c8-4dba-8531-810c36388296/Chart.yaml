@@ -1,0 +1,16 @@
+apiVersion: v1
+appVersion: v1.0
+description: test-app
+icon: https://raw.githubusercontent.com/eurodatacube/charts/master/contributions/0d08327f-11c8-4dba-8531-810c36388296/-Wang_Yuanyuan.jpeg?sanitize=true
+keywords:
+- license:null
+- 'license_notes:'
+- 'license_price:'
+- requirement:eoxhub
+- tag:On-the-fly
+maintainers:
+- name: 799dbac3-15f4-4a76-a01e-2cab48bb09de
+name: 0d08327f-11c8-4dba-8531-810c36388296
+sources:
+- 'null'
+version: 0.0.1
