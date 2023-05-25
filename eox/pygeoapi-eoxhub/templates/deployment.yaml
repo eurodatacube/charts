@@ -133,4 +133,7 @@ spec:
       affinity:
         {{- .Values.pygeoapi.affinity | toYaml | nindent 8 -}}
       {{ end }}
-      tolerations: []
+      {{- if .Values.pygeoapi.tolerations }}
+      tolerations:
+        {{- .Values.pygeoapi.tolerations | toYaml | nindent 8 -}}
+      {{ end }}

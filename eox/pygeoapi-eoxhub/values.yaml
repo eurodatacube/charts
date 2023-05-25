@@ -40,6 +40,8 @@ pygeoapi:
             operator: In
             values:
             - user
+  tolerations: []
+  # tolerations: [{"key": "hub.eox.at/processing", "operator": "Exists", "effect": "NoSchedule"}]
   logLevel: INFO  # "DEBUG" for more verbosity
 
 secrets: []
