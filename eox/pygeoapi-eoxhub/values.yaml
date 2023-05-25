@@ -7,6 +7,7 @@ existingNfs:
 extraPvcs: []
   #- claim_name: ama-jupyter-eox
   #  mount_path: /home/jovyan/eox
+  #  sub_path: my-dir  # optional
 
 
 defaultImage: "527538141574.dkr.ecr.eu-central-1.amazonaws.com/eurodatacube-jupyter-user:0.24.5"
