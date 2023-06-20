@@ -27,6 +27,7 @@ ingressEnabled: true
 # ingressUrl: "foo.example.com"
 
 outputDirectory: "/home/jovyan/job-output"
+resultsInOutputDir: false
 
 pygeoapi:
   # This block concerns the pygeoapi server deployment itself

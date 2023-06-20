@@ -112,3 +112,6 @@ data:
           node_purpose_label_key: {{ .Values.nodePurposeLabelKey }}
           run_as_user: {{ .Values.job.runAsUser }}
           run_as_group: {{ .Values.job.runAsGroup }}
+          {{ if .Values.resultsInOutputDir }}
+          results_in_output_dir: true
+          {{ end }}
