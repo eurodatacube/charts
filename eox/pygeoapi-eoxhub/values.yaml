@@ -28,6 +28,7 @@ ingressEnabled: true
 
 outputDirectory: "/home/jovyan/job-output"
 resultsInOutputDir: false
+condaStoreGroups: []  # ["eurodatacube25", "mygroup"]
 
 pygeoapi:
   # This block concerns the pygeoapi server deployment itself
