@@ -95,7 +95,7 @@ spec:
             value: "{{ .Values.s3.bucketName }}"
           - name: AWS_S3_URL
             value: "{{ .Values.s3.s3Url }}"
-          image: totycro/s3fs:0.6.0-1.86
+          image: totycro/s3fs:0.13.0-1.91
           resources:
             limits:
               cpu: 100m
