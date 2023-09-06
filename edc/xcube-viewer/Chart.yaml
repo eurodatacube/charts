@@ -1,0 +1,12 @@
+apiVersion: v1
+appVersion: v1.0
+description: EDC xcube Viewer
+icon: https://raw.githubusercontent.com/eurodatacube/charts/master/edc/xcube-viewer/index.png?sanitize=true
+keywords:
+- license:Free
+- requirement:eurodatacube-xcube-gen
+- requirement:eoxhub
+maintainers:
+name: xcube-viewer
+sources:
+version: 1.0.0
