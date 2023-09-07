@@ -24,11 +24,15 @@ spec:
       containers:
         - name: {{ include "base.name" . }}
           image: eurodatacube/xcube:{{ .Chart.AppVersion }}
+          ports:
+            - name: http
+              containerPort: 9988
+              protocol: TCP
           volumeMounts:
             - mountPath: /config.yaml
               name: config
               subPath: config.yaml
-          command: xcube --traceback --loglevel INFO serve -v -a 0.0.0.0 -c /config.yaml --revprefix https://#TODO --traceperf
+          command: xcube --traceback --loglevel INFO serve -v -a 0.0.0.0:9988 -c /config.yaml
           resources:
             limits:
               cpu: "200m"
@@ -49,7 +53,7 @@ spec:
           requiredDuringSchedulingIgnoredDuringExecution:
             nodeSelectorTerms:
             - matchExpressions:
-              - key: hub.jupyter.org/node-purpose # TODO
+              - key: hub.jupyter.org/node-purpose
                 operator: In
                 values:
                 - user

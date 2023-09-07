@@ -5,5 +5,12 @@ metadata:
   labels:
 {{ include "base.labels" . | indent 4 }}
 spec:
-  type: ExternalName
-  externalName: xcube-viewer-app.brockmann-consult.de # TODO
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app.kubernetes.io/name: {{ include "base.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
