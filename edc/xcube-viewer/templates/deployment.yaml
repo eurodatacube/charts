@@ -32,7 +32,7 @@ spec:
             - name: xcube-config
               mountPath: /config.yaml
               subPath: config.yaml
-          command: ["xcube", "--traceback", "--loglevel", "INFO"", "-a", "0.0.0.0:9988", "-c", "/config.yaml"]
+          command: ["xcube", "--traceback", "--loglevel", "INFO", "-a", "0.0.0.0:9988", "-c", "/config.yaml"]
           resources:
             limits:
               cpu: "200m"
