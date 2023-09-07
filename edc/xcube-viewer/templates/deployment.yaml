@@ -29,10 +29,10 @@ spec:
               containerPort: 9988
               protocol: TCP
           volumeMounts:
-            - mountPath: /config.yaml
-              name: config
+            - name: xcube-config
+              mountPath: /config.yaml
               subPath: config.yaml
-          command: xcube --traceback --loglevel INFO serve -v -a 0.0.0.0:9988 -c /config.yaml
+          command: ["xcube", "--traceback", "--loglevel", "INFO"", "-a", "0.0.0.0:9988", "-c", "/config.yaml"]
           resources:
             limits:
               cpu: "200m"
@@ -41,13 +41,9 @@ spec:
               cpu: "100m"
               memory: "400M"
       volumes:
-        - configMap:
-            items:
-              - key: config.yaml
-                path: config.yaml
-            name: {{ include "base.fullname" . }}-config
-          name: config
-      nodeSelector: {}
+      - name: xcube-config
+        configMap:
+          name: {{ include "base.fullname" . }}
       affinity:
         nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
