@@ -7,7 +7,6 @@ metadata:
 {{ include "base.labels" . | indent 4 }}
   annotations:
     kubernetes.io/ingress.class: nginx
-    kubernetes.io/tls-acme: 'true'
     nginx.ingress.kubernetes.io/proxy-read-timeout: '600'
     nginx.ingress.kubernetes.io/enable-cors: 'true'
 spec:
@@ -25,4 +24,4 @@ spec:
   tls:
   - hosts:
     - {{ .Release.Name }}.{{ .Release.Namespace }}.hub.eox.at
-    secretName: {{ $fullName }}-tls
+    secretName: wildcard-tls
