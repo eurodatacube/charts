@@ -12,8 +12,6 @@ data:
 
     DatasetChunkCacheSize: 500M
 
-    base_dir: s3://xcube-viewer-app/edc/prod ## <- here we would need a place in EDC to store additional material, as e.g. the viewer configuration.
-
     Viewer:
       Configuration:
         Path: viewer
