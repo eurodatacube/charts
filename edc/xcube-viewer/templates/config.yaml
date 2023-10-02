@@ -5,6 +5,32 @@ metadata:
   labels:
 {{ include "base.labels" . | indent 4 }}
 data:
+  config.json: |
+    {
+      "name": "edc",
+      "server": {
+        "id": "edc",
+        "name": "EDC DEMO Server",
+        "url": "https://edc-api.brockmann-consult.de/api"
+      },
+      "branding": {
+        "allowRefresh": false,
+        "allowViewModePython": true,
+        "allow3D": true,
+        "allowDownloads": true,
+        "appBarTitle": "",
+        "windowTitle": "EDC xcube Viewer",
+        "organisationUrl": "https://eurodatacube.com",
+        "themeName": "light",
+        "primaryColor": "grey",
+        "secondaryColor": "pink",
+        "headerBackgroundColor": "#004070",
+        "logoImage": "logo.png",
+        "logoWidth": 120,
+        "defaultAgg": "mean",
+        "mapProjection": "EPSG:3857"
+      }
+    }
   config.yaml: |
     DatasetAttribution:
       - "© by Brockmann Consult GmbH 2023"

@@ -32,6 +32,9 @@ spec:
             - name: xcube-config
               mountPath: /config.yaml
               subPath: config.yaml
+            - name: xcube-config
+              mountPath: /home/xcube/viewer/config.json
+              subPath: config.json
           command: ["/opt/conda/bin/xcube", "--traceback", "--loglevel", "INFO", "serve", "-p", "9988", "-c", "/config.yaml"]
           resources:
             limits:
