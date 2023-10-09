@@ -1,0 +1,12 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: {{ include "base.fullname" . }}-bucket-copy-script
+  labels:
+{{ include "base.labels" . | indent 4 }}
+data:
+  copy_from_bucket.sh: |
+    set -x
+    . trap.sh
+    find /opt/s3fs/bucket
+    cat /opt/s3fs/bucket/viewer/config.json | sed "s#https://edc-api.brockmann-consult.de/api#${INGRESS_BASE}#" > /bucket-config/config.json

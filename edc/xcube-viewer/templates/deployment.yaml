@@ -32,7 +32,7 @@ spec:
             - name: xcube-config
               mountPath: /config.yaml
               subPath: config.yaml
-            - name: xcube-config
+            - name: bucket-config
               mountPath: /home/xcube/viewer/config.json
               subPath: config.json
           command: ["/opt/conda/bin/xcube", "--traceback", "--loglevel", "INFO", "serve", "-p", "9988", "-c", "/config.yaml"]
@@ -43,10 +43,51 @@ spec:
             requests:
               cpu: "100m"
               memory: "400M"
+      initContainers:
+      - name: s3-mounter
+        image: totycro/s3fs:0.13.0-1.91
+        args: ["sh", "-x", "/bucket-copy-script/copy_from_bucket.sh"]
+        volumeMounts:
+          - name: bucket-config
+            mountPath: /bucket-config
+          - name: bucket-copy-script
+            mountPath: /bucket-copy-script
+        env:
+        - name: INGRESS_BASE
+          value: "https://{{ .Release.Name }}.{{ .Release.Namespace }}.hub.eox.at"
+        - name: S3FS_ARGS
+          value: "-oallow_other -oro"
+        - name: AWS_S3_ACCESS_KEY_ID
+          valueFrom:
+            secretKeyRef:
+              name: xcube-viewer-bucket
+              key: username
+        - name: AWS_S3_SECRET_ACCESS_KEY
+          valueFrom:
+            secretKeyRef:
+              name: xcube-viewer-bucket
+              key: password
+        - name: AWS_S3_BUCKET
+          value: edc-xcube-viewer-demo:/
+        securityContext:
+          privileged: true
+        resources:
+          limits:
+            cpu: "1"
+            memory: 1Gi
+          requests:
+            cpu: "0.1"
+            memory: 128Mi
+
       volumes:
       - name: xcube-config
         configMap:
           name: {{ include "base.fullname" . }}
+      - name: bucket-copy-script
+        configMap:
+          name: {{ include "base.fullname" . }}-bucket-copy-script
+      - name: bucket-config
+        emptyDir: {}
       affinity:
         nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
