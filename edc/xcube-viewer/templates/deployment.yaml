@@ -29,7 +29,7 @@ spec:
               containerPort: 9988
               protocol: TCP
           volumeMounts:
-            - name: xcube-config
+            - name: bucket-config
               mountPath: /config.yaml
               subPath: config.yaml
             - name: bucket-config

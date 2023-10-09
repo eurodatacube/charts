@@ -10,3 +10,5 @@ data:
     . trap.sh
     find /opt/s3fs/bucket
     cat /opt/s3fs/bucket/viewer/config.json | sed "s#https://edc-api.brockmann-consult.de/api#${INGRESS_BASE}#" > /bucket-config/config.json
+    cp /opt/s3fs/bucket/api/server-config.yaml /bucket-config/config.yaml
+    chmod a+r /bucket-config/config.yaml
