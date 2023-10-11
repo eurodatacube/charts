@@ -10,6 +10,10 @@ metadata:
     nginx.ingress.kubernetes.io/proxy-read-timeout: '600'
     nginx.ingress.kubernetes.io/enable-cors: 'true'
     nginx.ingress.kubernetes.io/app-root: /viewer
+    # nginx.ingress.kubernetes.io/configuration-snippet" = "if ($request_uri !~* ^/(api|assets)) { rewrite ^/.*$ / break; }
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$1$2  # Here we concatenate the two matched groups
+
 spec:
   rules:
   - host: {{ .Release.Name }}.{{ .Release.Namespace }}.hub.eox.at
@@ -20,7 +24,14 @@ spec:
             name: {{ $fullName }}
             port:
               name: http
-        path: /
+        path: /api/()(.*)
+        pathType: ImplementationSpecific
+      - backend:
+          service:
+            name: {{ $fullName }}
+            port:
+              name: http
+        path: /(viewer)(.*)
         pathType: ImplementationSpecific
   tls:
   - hosts:

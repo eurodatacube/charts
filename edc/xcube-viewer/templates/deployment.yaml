@@ -44,13 +44,13 @@ spec:
               mountPath: /config.yaml
               subPath: config.yaml
             - name: bucket-config
-              mountPath: /home/xcube/viewer/config.json
-              subPath: config.json
+              mountPath: /home/xcube/viewer
+              subPath: viewer
           command: ["/opt/conda/bin/xcube", "--traceback", "--loglevel", "INFO", "serve", "-p", "9988", "-c", "/config.yaml"]
           resources:
             limits:
-              cpu: "200m"
-              memory: "800M"
+              cpu: "400m"
+              memory: "3G"
             requests:
               cpu: "100m"
               memory: "400M"

@@ -9,6 +9,12 @@ data:
     set -x
     . trap.sh
     find /opt/s3fs/bucket
-    cat /opt/s3fs/bucket/viewer/config.json | sed "s#https://edc-api.brockmann-consult.de/api#${INGRESS_BASE}#" > /bucket-config/config.json
-    cp /opt/s3fs/bucket/api/server-config.yaml /bucket-config/config.yaml
+
+    cp -r /opt/s3fs/bucket/viewer /bucket-config/viewer
+    cat /opt/s3fs/bucket/viewer/config.json | sed "s#https://edc-api.brockmann-consult.de/api#${INGRESS_BASE}/api#" > /bucket-config/viewer/config.json
+    cat /opt/s3fs/bucket/api/server-config.yaml | sed "s#Path: viewer#Path: /home/xcube/viewer#" > /bucket-config/config.yaml
     chmod a+r /bucket-config/config.yaml
+    chmod a+xr /bucket-config/viewer
+    chmod a+r /bucket-config/viewer/*
+
+    find /bucket-config
