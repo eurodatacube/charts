@@ -59,23 +59,26 @@ spec:
           - name: pygeoapi-config
             mountPath: "/pygeoapi/local.config.yml"
             subPath: local.config.yml
-          {{ if .Values.existingNfs.enabled }}
+          {{- if .Values.existingNfs.enabled }}
           - name: user-home
             # mount same as actual user pod such that we don't have to translate dirs
             mountPath: /home/jovyan
-          {{ end }}
-          {{ if .Values.s3.enabled }}
+          {{- end }}
+          {{- if .Values.s3.enabled }}
           - mountPath: /home/jovyan/s3
             mountPropagation: HostToContainer
             name: s3-user-bucket
-          {{ end }}
-          {{ range $pvcIndex, $extraPvc := .Values.extraPvcs }}
+          {{- end }}
+          {{- range $pvcIndex, $extraPvc := .Values.extraPvcs }}
           - name: extra-{{ $pvcIndex }}
             mountPath: {{ $extraPvc.mount_path }}
             {{ if $extraPvc.sub_path }}
             subPath: {{ $extraPvc.sub_path }}
             {{ end }}
-          {{ end }}
+          {{- end }}
+          {{- range .Values.extraVolumeMounts }}
+          - {{ . | toYaml | indent 12 | trim}}
+          {{- end }}
         {{ if .Values.s3.enabled }}
         - name: s3mounter
           env:
@@ -114,20 +117,23 @@ spec:
       - name: pygeoapi-config
         configMap:
           name: {{ include "base.fullname" . }}
-      {{ if .Values.existingNfs.enabled }}
+      {{- if .Values.existingNfs.enabled }}
       - name: user-home
         persistentVolumeClaim:
           claimName: user-{{ .Release.Name }}
-      {{ end }}
-      {{ if .Values.s3.enabled }}
+      {{- end }}
+      {{- if .Values.s3.enabled }}
       - emptyDir: {}
         name: s3-user-bucket
-      {{ end }}
-      {{ range $pvcIndex, $extraPvc := .Values.extraPvcs }}
+      {{- end }}
+      {{- range $pvcIndex, $extraPvc := .Values.extraPvcs }}
       - name: extra-{{ $pvcIndex }}
         persistentVolumeClaim:
           claimName: {{ $extraPvc.claim_name }}
-      {{ end }}
+      {{- end }}
+      {{- range .Values.extraVolumes }}
+      - {{ . | toYaml | nindent 8 | trim }}
+      {{- end }}
       nodeSelector: {}
       {{- if .Values.pygeoapi.affinity }}
       affinity:

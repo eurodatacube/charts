@@ -85,6 +85,22 @@ data:
           extra_pvcs:
             {{- toYaml .Values.extraPvcs | nindent 10 }}
           {{ end }}
+
+          {{- if empty .Values.extraVolumes }}
+          extra_volumes: []
+          {{- else }}
+          extra_volumes:
+          {{ toYaml .Values.extraVolumes | indent 10 | trim }}
+          {{- end }}
+
+          {{- if empty .Values.extraVolumeMounts }}
+          extra_volume_mounts: []
+          {{- else }}
+          extra_volume_mounts:
+          {{ toYaml .Values.extraVolumeMounts | indent 10 | trim }}
+          {{- end }}
+
+
           jupyter_base_url: "{{ .Values.jupyterBaseUrl }}"
           {{ if empty .Values.secrets }}
           secrets: []

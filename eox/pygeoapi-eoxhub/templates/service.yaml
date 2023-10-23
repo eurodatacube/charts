@@ -1,7 +1,13 @@
+{{ if .Values.enableEoxhubGatewayService }}
+# EOXHub gateway is looking for a service named `pygeoapi`
+# for service autodetection, so provide an extra service
+# here.
+# We don't autodetect the default service because
+# that would enable it everywhere automatically.
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "base.fullname" . }}
+  name: pygeoapi
   labels:
 {{ include "base.labels" . | indent 4 }}
 spec:
@@ -14,3 +20,4 @@ spec:
   selector:
     app.kubernetes.io/name: {{ include "base.name" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
+{{ end }}

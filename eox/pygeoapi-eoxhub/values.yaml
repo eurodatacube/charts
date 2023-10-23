@@ -4,6 +4,18 @@ existingNfs:
   nfsShare: "edc-jupyter-user-pvc-3157bd51-f57d-11e9-adac-062139e27092"
 
 
+    
+extraVolumes: []
+  # - name: shared
+  #   persistentVolumeClaim:
+  #     claimName: jupyterhub-core-shared
+extraVolumeMounts: []
+  # - mountPath: /home/jovyan/extra
+  #   name: shared
+  #   subPath: "eurodatacube0"
+
+
+# DEPRECATED: this syntax only allows 1 mount per volume
 extraPvcs: []
   #- claim_name: ama-jupyter-eox
   #  mount_path: /home/jovyan/eox
@@ -68,3 +80,5 @@ job:
 
 fargate:
   allow: false
+
+enableEoxhubGatewayService: false
