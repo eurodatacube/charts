@@ -78,6 +78,9 @@ job:
   runAsUser: null
   runAsGroup: null
 
+  extraResourceLimits: {}
+  extraResourceRequests: {}
+
 fargate:
   allow: false
 

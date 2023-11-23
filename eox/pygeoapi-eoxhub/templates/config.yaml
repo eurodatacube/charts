@@ -137,3 +137,7 @@ data:
           conda_store_groups:
 {{ toYaml .Values.condaStoreGroups  | indent 10}}
           {{ end }}
+          extra_resource_limits:
+            {{- toYaml .Values.job.extraResourceLimits | nindent 12 }}
+          extra_resource_requests:
+            {{- toYaml .Values.job.extraResourceRequests | nindent 12 }}
