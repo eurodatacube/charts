@@ -85,3 +85,4 @@ fargate:
   allow: false
 
 enableEoxhubGatewayService: false
+enableEoxhubAppAnnotations: false
