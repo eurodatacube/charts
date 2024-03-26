@@ -84,5 +84,6 @@ job:
 fargate:
   allow: false
 
+# NOTE: if the fullname is overridden to be pygeoapi, we don't need this svc
 enableEoxhubGatewayService: false
 enableEoxhubAppAnnotations: false
