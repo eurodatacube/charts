@@ -44,7 +44,7 @@ spec:
             - name: WSGI_WORKERS
               value: "1"
           livenessProbe:
-            initialDelaySeconds: 25
+            initialDelaySeconds: 20
             periodSeconds: 15
             failureThreshold: 5
             httpGet:
