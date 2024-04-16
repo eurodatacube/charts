@@ -150,7 +150,7 @@ data:
         processor:
           name: pygeoapi_kubernetes_papermill.ContainerImageKubernetesProcessor
           default_image: "{{ .Values.defaultImage }}"
-          command: "{{ .Values.command }}"
+          command: "{{ .Values.job.command }}"
           allowed_images_regex: "{{ .Values.allowedImagesRegex }}"
           image_pull_secret: "{{ .Values.imagePullSecret }}"
           {{ if .Values.s3.enabled }}
