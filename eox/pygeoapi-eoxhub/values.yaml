@@ -31,6 +31,7 @@ s3:
   enabled: false
   bucketName: ""
   secretName: "edc-bucket"
+  mountPath: ""  # only image mode
   s3Url: "https://s3-eu-central-1.amazonaws.com"
 
 jupyterBaseUrl: "https://edc-jupyter.hub.eox.at"
@@ -74,6 +75,8 @@ tolerations: []
 # tolerations: [{"key": "hub.eox.at/processing", "operator": "Exists", "effect": "NoSchedule"}]
 
 job:
+  mode: "notebook"
+
   # TODO: move other global values to job (breaking change)
   runAsUser: null
   runAsGroup: null
@@ -81,9 +84,13 @@ job:
   extraResourceLimits: {}
   extraResourceRequests: {}
 
+  command: ""  # only image mode
+  parametersEnv: {}  # only image mode
+
 fargate:
   allow: false
 
 # NOTE: if the fullname is overridden to be pygeoapi, we don't need this svc
 enableEoxhubGatewayService: false
 enableEoxhubAppAnnotations: false
+
