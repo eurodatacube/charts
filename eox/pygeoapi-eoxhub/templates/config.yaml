@@ -174,6 +174,12 @@ data:
           {{ toYaml .Values.extraVolumeMounts | indent 10 | trim }}
           {{- end }}
 
+          {{ if empty .Values.secrets }}
+          secrets: []
+          {{ else }}
+          secrets:
+            {{- toYaml .Values.secrets | nindent 10 }}
+          {{ end }}
 
           default_node_purpose: {{ .Values.defaultNodePurpose }}
           allowed_node_purposes_regex: {{ .Values.allowedNodePurposesRegex }}
