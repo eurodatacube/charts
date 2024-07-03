@@ -203,7 +203,12 @@ data:
           id: {{ .id }}
           title: {{ .title }}
           version: {{ .version }}
-          inputs: {{ .inputs }}
+          {{- if empty .inputs }}
+          inputs: []
+          {{- else }}
+          inputs:
+            {{ toYaml .inputs | indent 12 | trim }}
+          {{- end }}
 
           default_image: "{{ .defaultImage }}"
           command: "{{ .command }}"
