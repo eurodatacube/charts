@@ -94,3 +94,4 @@ fargate:
 enableEoxhubGatewayService: false
 enableEoxhubAppAnnotations: false
 
+genericProcesses: []
