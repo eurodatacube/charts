@@ -191,8 +191,14 @@ data:
           {{ end }}
           allow_fargate: {{ .Values.fargate.allow }}
           node_purpose_label_key: {{ .Values.nodePurposeLabelKey }}
+
+          {{- if .Values.job.parametersEnv }}
           parameters_env:
             {{- toYaml .Values.job.parametersEnv| nindent 12 }}
+          {{- else }}
+          parameters_env: {}
+          {{- end }}
+
       {{ end }}
 
       {{- range .Values.genericProcesses }}
@@ -251,8 +257,12 @@ data:
           {{- end }}
           allow_fargate: {{ .fargate.allow }}
           node_purpose_label_key: {{ .nodePurposeLabelKey }}
+
+          {{- if .parametersEnv }}
           parameters_env:
             {{- toYaml .parametersEnv| nindent 12 }}
-
+          {{- else }}
+          parameters_env: {}
+          {{- end }}
 
       {{- end }}
