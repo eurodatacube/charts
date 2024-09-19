@@ -23,7 +23,11 @@ data:
         # ogc_schemas_location: /opt/schemas.opengis.net
 
         manager:
+            {{- if eq .Values.job.mode "argo" }}
+            name: pygeoapi_kubernetes_papermill.ArgoManager
+            {{- else }}
             name: pygeoapi_kubernetes_papermill.KubernetesManager
+            {{- end }}
 
     logging:
         level: {{ .Values.pygeoapi.logLevel }}
@@ -265,4 +269,12 @@ data:
           parameters_env: {}
           {{- end }}
 
+      {{- end }}
+
+      {{- range .Values.argoWorkflows }}
+      {{ .id }}:
+        type: process
+        processor:
+          name: pygeoapi_kubernetes_papermill.ArgoProcessor
+          workflow_template: {{ .workflowTemplate }}
       {{- end }}

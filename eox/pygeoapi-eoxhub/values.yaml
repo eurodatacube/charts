@@ -75,7 +75,7 @@ tolerations: []
 # tolerations: [{"key": "hub.eox.at/processing", "operator": "Exists", "effect": "NoSchedule"}]
 
 job:
-  mode: "notebook"
+  mode: "notebook"  # or 'argo' or 'image'
 
   # TODO: move other global values to job (breaking change)
   runAsUser: null
@@ -95,3 +95,5 @@ enableEoxhubGatewayService: false
 enableEoxhubAppAnnotations: false
 
 genericProcesses: []
+
+argoWorkflows: []  # 
