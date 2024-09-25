@@ -66,3 +66,7 @@ rules:
     verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
     resources:
       - workflows
+  - apiGroups: ["argoproj.io"]
+    verbs: ["get", "list", "watch"]
+    resources:
+      - workflowtemplates
