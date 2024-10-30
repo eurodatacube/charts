@@ -105,6 +105,12 @@ spec:
           - name: AWS_S3_URL
             value: "{{ .Values.s3.s3Url }}"
           image: totycro/s3fs:0.13.0-1.91
+          livenessProbe:
+            exec:
+              command:
+              - sh
+              - -c
+              - pgrep s3fs > /dev/null
           resources:
             limits:
               cpu: 100m
