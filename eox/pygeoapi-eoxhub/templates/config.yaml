@@ -81,6 +81,11 @@ data:
             bucket_name: "{{ .Values.s3.bucketName }}"
             secret_name: "{{ .Values.s3.secretName }}"
             s3_url: "{{ .Values.s3.s3Url }}"
+            resource_limits:
+              {{- toYaml .Values.s3.resourceLimits | nindent 14 }}
+            resource_requests:
+              {{- toYaml .Values.s3.resourceRequests | nindent 14 }}
+
           {{ end }}
           output_directory: "{{ .Values.outputDirectory }}"
           home_volume_claim_name: "{{ if .Values.existingNfs.enabled }}user-{{ .Release.Name }}{{ end }}"
@@ -163,6 +168,11 @@ data:
             secret_name: "{{ .Values.s3.secretName }}"
             mount_path: "{{ .Values.s3.mountPath }}"
             s3_url: "{{ .Values.s3.s3Url }}"
+            resource_limits:
+              {{- toYaml .Values.s3.resourceLimits | nindent 14 }}
+            resource_requests:
+              {{- toYaml .Values.s3.resourceRequests | nindent 14 }}
+
           {{ end }}
           {{- if empty .Values.extraVolumes }}
           extra_volumes: []
@@ -230,6 +240,10 @@ data:
             secret_name: "{{ .s3.secretName }}"
             mount_path: "{{ .s3.mountPath }}"
             s3_url: "{{ .s3.s3Url }}"
+            resource_limits:
+              {{- toYaml .Values.s3.resourceLimits | nindent 14 }}
+            resource_requests:
+              {{- toYaml .Values.s3.resourceRequests | nindent 14 }}
           {{- end }}
           {{- if empty .extraVolumes }}
           extra_volumes: []
