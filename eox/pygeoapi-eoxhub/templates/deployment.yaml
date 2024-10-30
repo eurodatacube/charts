@@ -85,7 +85,7 @@ spec:
           {{- range .Values.extraVolumeMounts }}
           - {{ . | toYaml | indent 12 | trim}}
           {{- end }}
-        {{ if .Values.s3.enabled }}
+        {{- if .Values.s3.enabled }}
         - name: s3mounter
           env:
           - name: S3FS_ARGS
@@ -113,18 +113,18 @@ spec:
               - pgrep s3fs > /dev/null
           resources:
             limits:
-              cpu: 100m
-              memory: 128Mi
+              cpu: {{ .Values.s3.resourceLimits.cpu | default "0.2" }}
+              memory: {{ .Values.s3.resourceLimits.memory | default "512Mi" }}
             requests:
-              cpu: 50m
-              memory: 32Mi
+              cpu: {{ .Values.s3.resourceRequests.cpu | default "0.05" }}
+              memory: {{ .Values.s3.resourceRequests.memory | default "32Mi" }}
           securityContext:
             privileged: true
           volumeMounts:
           - mountPath: /opt/s3fs/bucket
             mountPropagation: Bidirectional
             name: s3-user-bucket
-          {{ end }}
+          {{- end }}
       volumes:
       - name: pygeoapi-config
         configMap:

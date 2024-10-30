@@ -33,6 +33,9 @@ s3:
   secretName: "edc-bucket"
   mountPath: ""  # only image mode
   s3Url: "https://s3-eu-central-1.amazonaws.com"
+  # NOTE; this is applied to the job as well as the server
+  resourceLimits: {}
+  resourceRequests: {}
 
 jupyterBaseUrl: "https://edc-jupyter.hub.eox.at"
 
