@@ -29,6 +29,8 @@ data:
             name: pygeoapi_kubernetes_papermill.KubernetesManager
             {{- end }}
 
+            log_query_endpoint: "{{ .Values.job.logQueryEndpoint }}"
+
     logging:
         level: {{ .Values.pygeoapi.logLevel }}
         #logfile: /tmp/pygeoapi.log

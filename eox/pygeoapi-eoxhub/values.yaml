@@ -80,6 +80,8 @@ tolerations: []
 job:
   mode: "notebook"  # or 'argo' or 'image'
 
+  logQueryEndpoint: ""
+
   # TODO: move other global values to job (breaking change)
   runAsUser: null
   runAsGroup: null
