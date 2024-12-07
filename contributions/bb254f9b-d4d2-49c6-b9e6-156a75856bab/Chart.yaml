@@ -1,0 +1,17 @@
+apiVersion: v1
+appVersion: v1.0
+description: test
+icon: https://raw.githubusercontent.com/eurodatacube/charts/master/contributions/bb254f9b-d4d2-49c6-b9e6-156a75856bab/edc-logo.png?sanitize=true
+keywords:
+- license:null
+- 'license_notes:'
+- 'license_price:'
+- requirement:eoxhub
+- requirement:eurodatacube-geodb
+- tag:EO Data
+maintainers:
+- name: eoxhub_20a41cef-8d63-4030-9e37-aa3412866cee
+name: bb254f9b-d4d2-49c6-b9e6-156a75856bab
+sources:
+- totycro/docker-s3fs-client
+version: 0.0.1
