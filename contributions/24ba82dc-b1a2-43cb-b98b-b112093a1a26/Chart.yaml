@@ -1,0 +1,22 @@
+apiVersion: v1
+appVersion: v1.0
+description: Map
+icon: https://raw.githubusercontent.com/eurodatacube/charts/master/contributions/24ba82dc-b1a2-43cb-b98b-b112093a1a26/FB_IMG_1599180205878.jpg?sanitize=true
+keywords:
+- license:Commercial
+- license_notes:null
+- license_price:30.000
+- requirement:eurodatacube-xcube-gen
+- requirement:eoxhub
+- requirement:eurodatacube
+- requirement:eurodatacube-geodb
+- tag:Analysis-Ready Data
+- tag:Download Service
+- tag:EO Data
+- tag:GeoDB
+maintainers:
+- name: b96db566-b0d1-4fb3-9221-3a4057bb833f
+name: 24ba82dc-b1a2-43cb-b98b-b112093a1a26
+sources:
+- 'null'
+version: 0.2.3
