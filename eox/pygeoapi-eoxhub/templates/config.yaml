@@ -30,6 +30,7 @@ data:
             {{- end }}
 
             log_query_endpoint: "{{ .Values.job.logQueryEndpoint }}"
+            results_link_template: "{{ .Values.results.resultsLinkTemplate }}"
 
     logging:
         level: {{ .Values.pygeoapi.logLevel }}

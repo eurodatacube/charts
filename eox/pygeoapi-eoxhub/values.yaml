@@ -77,6 +77,9 @@ allowedNodePurposesRegex: ""
 tolerations: []
 # tolerations: [{"key": "hub.eox.at/processing", "operator": "Exists", "effect": "NoSchedule"}]
 
+results:
+  resultsLinkTemplate: ""  # link with job_id as template parameter as in "example.com/{job_id}"
+
 job:
   mode: "notebook"  # or 'argo' or 'image'
 
